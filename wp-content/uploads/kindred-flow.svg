@@ -1,0 +1,223 @@
+<svg viewBox="0 0 900 520" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    @keyframes drawLine { from { stroke-dashoffset: 300; } to { stroke-dashoffset: 0; } }
+    @keyframes popIn { from { opacity: 0; transform: scale(0.85); } to { opacity: 1; transform: scale(1); } }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes flowDash { from { stroke-dashoffset: 20; } to { stroke-dashoffset: 0; } }
+    @keyframes savingsPulse { 0%{opacity:0.6} 50%{opacity:1} 100%{opacity:0.6} }
+    .pop { opacity: 0; animation: popIn 0.5s ease forwards; }
+    .fade { opacity: 0; animation: fadeIn 0.6s ease forwards; }
+    .draw { stroke-dasharray: 300; stroke-dashoffset: 300; animation: drawLine 1s ease forwards; }
+    .s1 { animation-delay: 0.2s; } .s2 { animation-delay: 0.7s; } .s3 { animation-delay: 1.2s; }
+    .s4 { animation-delay: 1.7s; } .s5 { animation-delay: 2.2s; }
+    .fb { animation-delay: 2.8s; } .sv { animation-delay: 3.4s; }
+    .a12 { animation-delay: 0.5s; } .a23 { animation-delay: 1.0s; }
+    .a34 { animation-delay: 1.5s; } .a45 { animation-delay: 2.0s; }
+    text { font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace; }
+    .feedback-line { stroke-dasharray: 6 4; animation: flowDash 0.8s linear infinite; }
+  </style>
+  <defs>
+    <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#1E293B" stroke-width="0.5"/>
+    </pattern>
+  </defs>
+
+  <!-- Background -->
+  <rect width="900" height="520" fill="#0D1117"/>
+  <rect width="900" height="520" fill="url(#grid)"/>
+  <rect x="8" y="8" width="884" height="504" fill="none" stroke="#334155" stroke-width="1" rx="4"/>
+
+  <!-- Title bar -->
+  <rect x="8" y="8" width="884" height="30" fill="#161B22" rx="4"/>
+  <circle cx="26" cy="23" r="5" fill="#EF4444" opacity="0.8"/>
+  <circle cx="42" cy="23" r="5" fill="#F59E0B" opacity="0.8"/>
+  <circle cx="58" cy="23" r="5" fill="#22C55E" opacity="0.8"/>
+  <text x="450" y="27" fill="#94A3B8" font-size="8" text-anchor="middle" font-weight="bold">KINDRED AI — CONTINUOUS OPTIMIZATION ENGINE</text>
+
+  <!-- Badge -->
+  <g class="pop s1">
+    <rect x="30" y="48" width="210" height="18" rx="9" fill="rgba(8,145,178,0.15)" stroke="rgba(8,145,178,0.3)" stroke-width="0.8"/>
+    <circle cx="42" cy="57" r="3" fill="#0891B2"><animate attributeName="opacity" values="1;0.4;1" dur="2s" repeatCount="indefinite"/></circle>
+    <text x="54" y="61" fill="#22D3EE" font-size="6">Optimization Loop Active | Feedback Enabled</text>
+  </g>
+
+  <!-- ===== TOP ROW: Main Pipeline ===== -->
+
+  <!-- STEP 1: Upload & Ingest -->
+  <g class="pop s1">
+    <rect x="30" y="80" width="155" height="110" rx="6" fill="#161B22" stroke="#334155" stroke-width="1.2"/>
+    <rect x="30" y="80" width="155" height="20" rx="6" fill="#1E293B"/>
+    <text x="108" y="94" fill="#94A3B8" font-size="6" text-anchor="middle" font-weight="bold">01 UPLOAD &amp; INGEST</text>
+    <rect x="42" y="108" width="30" height="16" rx="2" fill="none" stroke="#22D3EE" stroke-width="0.8"/>
+    <text x="57" y="119" fill="#22D3EE" font-size="5" text-anchor="middle">.DWG</text>
+    <rect x="78" y="108" width="30" height="16" rx="2" fill="none" stroke="#F59E0B" stroke-width="0.8"/>
+    <text x="93" y="119" fill="#F59E0B" font-size="5" text-anchor="middle">P&amp;ID</text>
+    <rect x="114" y="108" width="30" height="16" rx="2" fill="none" stroke="#22C55E" stroke-width="0.8"/>
+    <text x="129" y="119" fill="#22C55E" font-size="5" text-anchor="middle">SPEC</text>
+    <rect x="148" y="108" width="30" height="16" rx="2" fill="none" stroke="#A78BFA" stroke-width="0.8"/>
+    <text x="163" y="119" fill="#A78BFA" font-size="5" text-anchor="middle">BOM</text>
+    <text x="108" y="145" fill="#64748B" font-size="5" text-anchor="middle">Drawings, datasheets,</text>
+    <text x="108" y="155" fill="#64748B" font-size="5" text-anchor="middle">material specs, BOMs,</text>
+    <text x="108" y="165" fill="#64748B" font-size="5" text-anchor="middle">vendor docs, schedules</text>
+  </g>
+
+  <!-- Arrow 1→2 -->
+  <line x1="185" y1="135" x2="215" y2="135" stroke="#0891B2" stroke-width="1.5" class="draw a12"/>
+  <polygon points="213,131 220,135 213,139" fill="#0891B2" class="fade a12"/>
+
+  <!-- STEP 2: AI Analysis per Discipline -->
+  <g class="pop s2">
+    <rect x="220" y="80" width="175" height="110" rx="6" fill="#161B22" stroke="#0891B2" stroke-width="1.2"/>
+    <rect x="220" y="80" width="175" height="20" rx="6" fill="rgba(8,145,178,0.2)"/>
+    <text x="308" y="94" fill="#22D3EE" font-size="6" text-anchor="middle" font-weight="bold">02 AI DISCIPLINE ANALYSIS</text>
+    <!-- Discipline rows with status -->
+    <text x="232" y="112" fill="#22D3EE" font-size="5">Process</text>
+    <rect x="290" y="105" width="40" height="6" rx="2" fill="#22C55E" opacity="0.4"/>
+    <text x="336" y="112" fill="#22C55E" font-size="5">98%</text>
+    <text x="232" y="124" fill="#22D3EE" font-size="5">Mechanical</text>
+    <rect x="290" y="117" width="34" height="6" rx="2" fill="#22C55E" opacity="0.4"/>
+    <text x="336" y="124" fill="#22C55E" font-size="5">85%</text>
+    <text x="232" y="136" fill="#22D3EE" font-size="5">Piping</text>
+    <rect x="290" y="129" width="30" height="6" rx="2" fill="#F59E0B" opacity="0.4"/>
+    <text x="336" y="136" fill="#F59E0B" font-size="5">72%</text>
+    <text x="232" y="148" fill="#22D3EE" font-size="5">Electrical</text>
+    <rect x="290" y="141" width="36" height="6" rx="2" fill="#22C55E" opacity="0.4"/>
+    <text x="336" y="148" fill="#22C55E" font-size="5">90%</text>
+    <text x="232" y="160" fill="#22D3EE" font-size="5">Instrumentation</text>
+    <rect x="290" y="153" width="26" height="6" rx="2" fill="#F59E0B" opacity="0.4"/>
+    <text x="336" y="160" fill="#F59E0B" font-size="5">65%</text>
+    <text x="232" y="172" fill="#22D3EE" font-size="5">Civil / HSE</text>
+    <rect x="290" y="165" width="38" height="6" rx="2" fill="#22C55E" opacity="0.4"/>
+    <text x="336" y="172" fill="#22C55E" font-size="5">95%</text>
+    <!-- Scanning animation -->
+    <rect x="290" y="105" width="2" height="68" fill="#0891B2" opacity="0.3">
+      <animate attributeName="x" values="290;380;290" dur="3s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+
+  <!-- Arrow 2→3 -->
+  <line x1="395" y1="135" x2="425" y2="135" stroke="#0891B2" stroke-width="1.5" class="draw a23"/>
+  <polygon points="423,131 430,135 423,139" fill="#0891B2" class="fade a23"/>
+
+  <!-- STEP 3: Optimization Engine -->
+  <g class="pop s3">
+    <rect x="430" y="80" width="155" height="110" rx="6" fill="#161B22" stroke="#7C3AED" stroke-width="1.2"/>
+    <rect x="430" y="80" width="155" height="20" rx="6" fill="rgba(124,58,237,0.15)"/>
+    <text x="508" y="94" fill="#A78BFA" font-size="6" text-anchor="middle" font-weight="bold">03 OPTIMIZE &amp; GENERATE</text>
+    <!-- Optimization items -->
+    <circle cx="448" cy="112" r="4" fill="none" stroke="#A78BFA" stroke-width="0.8"/>
+    <text x="456" y="115" fill="#94A3B8" font-size="5">Simplify pipe routing</text>
+    <circle cx="448" cy="126" r="4" fill="none" stroke="#A78BFA" stroke-width="0.8"/>
+    <text x="456" y="129" fill="#94A3B8" font-size="5">Reduce material spec</text>
+    <circle cx="448" cy="140" r="4" fill="none" stroke="#A78BFA" stroke-width="0.8"/>
+    <text x="456" y="143" fill="#94A3B8" font-size="5">Consolidate BOMs</text>
+    <circle cx="448" cy="154" r="4" fill="none" stroke="#A78BFA" stroke-width="0.8"/>
+    <text x="456" y="157" fill="#94A3B8" font-size="5">Flag over-engineering</text>
+    <circle cx="448" cy="168" r="4" fill="none" stroke="#A78BFA" stroke-width="0.8"/>
+    <text x="456" y="171" fill="#94A3B8" font-size="5">Auto-generate drawings</text>
+    <!-- Pulsing core -->
+    <circle cx="448" cy="140" r="4" fill="#7C3AED" opacity="0.3">
+      <animate attributeName="r" values="4;8;4" dur="2s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.3;0;0.3" dur="2s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- Arrow 3→4 -->
+  <line x1="585" y1="135" x2="615" y2="135" stroke="#0891B2" stroke-width="1.5" class="draw a34"/>
+  <polygon points="613,131 620,135 613,139" fill="#0891B2" class="fade a34"/>
+
+  <!-- STEP 4: Review & Deploy -->
+  <g class="pop s4">
+    <rect x="620" y="80" width="155" height="110" rx="6" fill="#161B22" stroke="#22C55E" stroke-width="1.2"/>
+    <rect x="620" y="80" width="155" height="20" rx="6" fill="rgba(34,197,94,0.15)"/>
+    <text x="698" y="94" fill="#22C55E" font-size="6" text-anchor="middle" font-weight="bold">04 REVIEW &amp; DEPLOY</text>
+    <rect x="635" y="108" width="8" height="8" rx="1.5" fill="none" stroke="#22C55E" stroke-width="0.8"/>
+    <path d="M637 112 L639 114.5 L643 109.5" fill="none" stroke="#22C55E" stroke-width="1"/>
+    <text x="650" y="115" fill="#94A3B8" font-size="5.5">ASME B31.1 validated</text>
+    <rect x="635" y="122" width="8" height="8" rx="1.5" fill="none" stroke="#22C55E" stroke-width="0.8"/>
+    <path d="M637 126 L639 128.5 L643 123.5" fill="none" stroke="#22C55E" stroke-width="1"/>
+    <text x="650" y="129" fill="#94A3B8" font-size="5.5">ISA-5.1 compliant</text>
+    <rect x="635" y="136" width="8" height="8" rx="1.5" fill="none" stroke="#22C55E" stroke-width="0.8"/>
+    <path d="M637 140 L639 142.5 L643 137.5" fill="none" stroke="#22C55E" stroke-width="1"/>
+    <text x="650" y="143" fill="#94A3B8" font-size="5.5">API 520 checked</text>
+    <rect x="635" y="150" width="8" height="8" rx="1.5" fill="none" stroke="#22C55E" stroke-width="0.8"/>
+    <path d="M637 154 L639 156.5 L643 151.5" fill="none" stroke="#22C55E" stroke-width="1"/>
+    <text x="650" y="157" fill="#94A3B8" font-size="5.5">Clash detection clear</text>
+    <rect x="635" y="164" width="8" height="8" rx="1.5" fill="none" stroke="#22C55E" stroke-width="0.8"/>
+    <path d="M637 168 L639 170.5 L643 165.5" fill="none" stroke="#22C55E" stroke-width="1"/>
+    <text x="650" y="171" fill="#94A3B8" font-size="5.5">Approved for IFC</text>
+  </g>
+
+  <!-- ===== FEEDBACK LOOP ARROW ===== -->
+  <g class="fade fb">
+    <!-- Right side down -->
+    <line x1="808" y1="135" x2="808" y2="250" stroke="#EF4444" stroke-width="1.2" class="feedback-line"/>
+    <!-- Bottom across -->
+    <line x1="808" y1="250" x2="30" y2="250" stroke="#EF4444" stroke-width="1.2" class="feedback-line"/>
+    <!-- Left side up to arrow -->
+    <line x1="30" y1="250" x2="30" y2="135" stroke="#EF4444" stroke-width="1.2" class="feedback-line"/>
+    <polygon points="26,108 30,98 34,108" fill="#EF4444"/>
+    <!-- Feedback label -->
+    <rect x="350" y="240" width="200" height="20" rx="10" fill="#161B22" stroke="#EF4444" stroke-width="0.8"/>
+    <text x="450" y="254" fill="#EF4444" font-size="6.5" text-anchor="middle" font-weight="bold">FEEDBACK LOOP → REOPTIMIZE PLANS</text>
+
+    <!-- Arrow from step 4 to feedback -->
+    <line x1="775" y1="135" x2="808" y2="135" stroke="#EF4444" stroke-width="1.2" class="feedback-line"/>
+  </g>
+
+  <!-- ===== SAVINGS ROW ===== -->
+  <g class="fade sv">
+    <rect x="30" y="275" width="840" height="28" rx="6" fill="rgba(34,197,94,0.08)" stroke="#22C55E" stroke-width="0.6"/>
+    <text x="450" y="293" fill="#22C55E" font-size="7" text-anchor="middle" font-weight="bold">EACH OPTIMIZATION CYCLE COMPOUNDS SAVINGS ACROSS MATERIALS, LABOR, AND REWORK</text>
+  </g>
+
+  <!-- ===== BOTTOM: Three Savings Categories ===== -->
+
+  <!-- Materials Savings -->
+  <g class="pop sv">
+    <rect x="30" y="318" width="265" height="115" rx="6" fill="#161B22" stroke="#22D3EE" stroke-width="0.8"/>
+    <rect x="30" y="318" width="265" height="22" rx="6" fill="rgba(8,145,178,0.12)"/>
+    <text x="163" y="333" fill="#22D3EE" font-size="7" text-anchor="middle" font-weight="bold">MATERIAL SAVINGS</text>
+    <text x="45" y="355" fill="#94A3B8" font-size="5.5">Consolidated BOMs eliminate double-orders</text>
+    <text x="45" y="368" fill="#94A3B8" font-size="5.5">Optimized specs reduce over-procurement</text>
+    <text x="45" y="381" fill="#94A3B8" font-size="5.5">Aligned deliveries cut storage &amp; insurance</text>
+    <text x="45" y="394" fill="#94A3B8" font-size="5.5">Predictive tracking prevents expediting</text>
+    <!-- Metric -->
+    <rect x="200" y="403" width="85" height="22" rx="4" fill="rgba(8,145,178,0.15)"/>
+    <text x="243" y="418" fill="#22D3EE" font-size="9" text-anchor="middle" font-weight="bold">-23% cost</text>
+    <text x="243" y="418" fill="#22D3EE" font-size="9" text-anchor="middle" font-weight="bold">
+      <animate attributeName="opacity" values="0.6;1;0.6" dur="3s" repeatCount="indefinite"/>
+    </text>
+  </g>
+
+  <!-- Labor Savings -->
+  <g class="pop sv" style="animation-delay:3.6s">
+    <rect x="310" y="318" width="265" height="115" rx="6" fill="#161B22" stroke="#A78BFA" stroke-width="0.8"/>
+    <rect x="310" y="318" width="265" height="22" rx="6" fill="rgba(124,58,237,0.12)"/>
+    <text x="443" y="333" fill="#A78BFA" font-size="7" text-anchor="middle" font-weight="bold">LABOR SAVINGS</text>
+    <text x="325" y="355" fill="#94A3B8" font-size="5.5">Auto-generated drawings cut engineering hours</text>
+    <text x="325" y="368" fill="#94A3B8" font-size="5.5">AI compliance checks replace manual review</text>
+    <text x="325" y="381" fill="#94A3B8" font-size="5.5">Automated reporting kills clerical detective work</text>
+    <text x="325" y="394" fill="#94A3B8" font-size="5.5">Multi-discipline sync reduces coordination lag</text>
+    <!-- Metric -->
+    <rect x="480" y="403" width="85" height="22" rx="4" fill="rgba(124,58,237,0.15)"/>
+    <text x="523" y="418" fill="#A78BFA" font-size="9" text-anchor="middle" font-weight="bold">-40% hours</text>
+  </g>
+
+  <!-- Mistake/Rework Savings -->
+  <g class="pop sv" style="animation-delay:3.8s">
+    <rect x="590" y="318" width="280" height="115" rx="6" fill="#161B22" stroke="#22C55E" stroke-width="0.8"/>
+    <rect x="590" y="318" width="280" height="22" rx="6" fill="rgba(34,197,94,0.12)"/>
+    <text x="730" y="333" fill="#22C55E" font-size="7" text-anchor="middle" font-weight="bold">REWORK ELIMINATION</text>
+    <text x="605" y="355" fill="#94A3B8" font-size="5.5">Clash detection catches conflicts before fabrication</text>
+    <text x="605" y="368" fill="#94A3B8" font-size="5.5">Standards validation prevents field rejection</text>
+    <text x="605" y="381" fill="#94A3B8" font-size="5.5">Gap analysis fills missing deliverables early</text>
+    <text x="605" y="394" fill="#94A3B8" font-size="5.5">Feedback loop learns from each project cycle</text>
+    <!-- Metric -->
+    <rect x="775" y="403" width="85" height="22" rx="4" fill="rgba(34,197,94,0.15)"/>
+    <text x="818" y="418" fill="#22C55E" font-size="9" text-anchor="middle" font-weight="bold">-60% rework</text>
+  </g>
+
+  <!-- Footer -->
+  <text x="450" y="498" fill="#334155" font-size="5" text-anchor="middle">KINDRED INDUSTRIAL SERVICES — CONTINUOUS AI OPTIMIZATION — INVENIO TECHNOLOGIES</text>
+</svg>
