@@ -344,241 +344,18 @@ Operations, inventory, assets, fleet, finance, and analytics—unified into one 
 	</div> 
 
 	<div style="" class="vc_col-sm-6 wpb_column column_container vc_column_container col child_column left_padding_desktop_10pct left_padding_tablet_20px top_padding_desktop_10pct top_padding_tablet_20px right_padding_desktop_10pct right_padding_tablet_20px bottom_padding_desktop_10pct bottom_padding_tablet_20px flex_layout_desktop_column flex_justify_content_desktop_center flex_align_items_desktop_stretch flex_wrap_desktop_nowrap flex_reverse_desktop_false flex_gap_desktop_10px " data-using-bg="true" data-border-radius="15px" data-bg-cover="true" data-padding-pos="all" data-has-bg-color="false" data-bg-color="" data-bg-opacity="1" data-animation="" data-delay="0">
-		<div class="vc_column-inner"><div style="position:absolute;top:0;left:0;right:0;bottom:0;background:#0D1117;border-radius:15px;overflow:hidden;z-index:0;"><svg viewBox="0 0 900 520" xmlns="http://www.w3.org/2000/svg">
-  <style>
-    @keyframes drawLine { from { stroke-dashoffset: 300; } to { stroke-dashoffset: 0; } }
-    @keyframes popIn { from { opacity: 0; transform: scale(0.85); } to { opacity: 1; transform: scale(1); } }
-    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-    @keyframes flowDash { from { stroke-dashoffset: 20; } to { stroke-dashoffset: 0; } }
-    @keyframes savingsPulse { 0%{opacity:0.6} 50%{opacity:1} 100%{opacity:0.6} }
-    .pop { opacity: 0; animation: popIn 0.5s ease forwards; }
-    .fade { opacity: 0; animation: fadeIn 0.6s ease forwards; }
-    .draw { stroke-dasharray: 300; stroke-dashoffset: 300; animation: drawLine 1s ease forwards; }
-    .s1 { animation-delay: 0.2s; } .s2 { animation-delay: 0.7s; } .s3 { animation-delay: 1.2s; }
-    .s4 { animation-delay: 1.7s; } .s5 { animation-delay: 2.2s; }
-    .fb { animation-delay: 2.8s; } .sv { animation-delay: 3.4s; }
-    .a12 { animation-delay: 0.5s; } .a23 { animation-delay: 1.0s; }
-    .a34 { animation-delay: 1.5s; } .a45 { animation-delay: 2.0s; }
-    text { font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace; }
-    .feedback-line { stroke-dasharray: 6 4; animation: flowDash 0.8s linear infinite; }
-  </style>
-  <defs>
-    <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
-      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#1E293B" stroke-width="0.5"/>
-    </pattern>
-  </defs>
-
-  <!-- Background -->
-  <rect width="900" height="520" fill="#0D1117"/>
-  <rect width="900" height="520" fill="url(#grid)"/>
-  <rect x="8" y="8" width="884" height="504" fill="none" stroke="#334155" stroke-width="1" rx="4"/>
-
-  <!-- Title bar -->
-  <rect x="8" y="8" width="884" height="30" fill="#161B22" rx="4"/>
-  <circle cx="26" cy="23" r="5" fill="#EF4444" opacity="0.8"/>
-  <circle cx="42" cy="23" r="5" fill="#F59E0B" opacity="0.8"/>
-  <circle cx="58" cy="23" r="5" fill="#22C55E" opacity="0.8"/>
-  <text x="450" y="27" fill="#94A3B8" font-size="8" text-anchor="middle" font-weight="bold">KINDRED AI — CONTINUOUS OPTIMIZATION ENGINE</text>
-
-  <!-- Badge -->
-  <g class="pop s1">
-    <rect x="30" y="48" width="210" height="18" rx="9" fill="rgba(8,145,178,0.15)" stroke="rgba(8,145,178,0.3)" stroke-width="0.8"/>
-    <circle cx="42" cy="57" r="3" fill="#0891B2"><animate attributeName="opacity" values="1;0.4;1" dur="2s" repeatCount="indefinite"/></circle>
-    <text x="54" y="61" fill="#22D3EE" font-size="6">Optimization Loop Active | Feedback Enabled</text>
-  </g>
-
-  <!-- ===== TOP ROW: Main Pipeline ===== -->
-
-  <!-- STEP 1: Upload & Ingest -->
-  <g class="pop s1">
-    <rect x="30" y="80" width="155" height="110" rx="6" fill="#161B22" stroke="#334155" stroke-width="1.2"/>
-    <rect x="30" y="80" width="155" height="20" rx="6" fill="#1E293B"/>
-    <text x="108" y="94" fill="#94A3B8" font-size="6" text-anchor="middle" font-weight="bold">01 UPLOAD &amp; INGEST</text>
-    <rect x="42" y="108" width="30" height="16" rx="2" fill="none" stroke="#22D3EE" stroke-width="0.8"/>
-    <text x="57" y="119" fill="#22D3EE" font-size="5" text-anchor="middle">.DWG</text>
-    <rect x="78" y="108" width="30" height="16" rx="2" fill="none" stroke="#F59E0B" stroke-width="0.8"/>
-    <text x="93" y="119" fill="#F59E0B" font-size="5" text-anchor="middle">P&amp;ID</text>
-    <rect x="114" y="108" width="30" height="16" rx="2" fill="none" stroke="#22C55E" stroke-width="0.8"/>
-    <text x="129" y="119" fill="#22C55E" font-size="5" text-anchor="middle">SPEC</text>
-    <rect x="148" y="108" width="30" height="16" rx="2" fill="none" stroke="#A78BFA" stroke-width="0.8"/>
-    <text x="163" y="119" fill="#A78BFA" font-size="5" text-anchor="middle">BOM</text>
-    <text x="108" y="145" fill="#64748B" font-size="5" text-anchor="middle">Drawings, datasheets,</text>
-    <text x="108" y="155" fill="#64748B" font-size="5" text-anchor="middle">material specs, BOMs,</text>
-    <text x="108" y="165" fill="#64748B" font-size="5" text-anchor="middle">vendor docs, schedules</text>
-  </g>
-
-  <!-- Arrow 1→2 -->
-  <line x1="185" y1="135" x2="215" y2="135" stroke="#0891B2" stroke-width="1.5" class="draw a12"/>
-  <polygon points="213,131 220,135 213,139" fill="#0891B2" class="fade a12"/>
-
-  <!-- STEP 2: AI Analysis per Discipline -->
-  <g class="pop s2">
-    <rect x="220" y="80" width="175" height="110" rx="6" fill="#161B22" stroke="#0891B2" stroke-width="1.2"/>
-    <rect x="220" y="80" width="175" height="20" rx="6" fill="rgba(8,145,178,0.2)"/>
-    <text x="308" y="94" fill="#22D3EE" font-size="6" text-anchor="middle" font-weight="bold">02 AI DISCIPLINE ANALYSIS</text>
-    <!-- Discipline rows with status -->
-    <text x="232" y="112" fill="#22D3EE" font-size="5">Process</text>
-    <rect x="290" y="105" width="40" height="6" rx="2" fill="#22C55E" opacity="0.4"/>
-    <text x="336" y="112" fill="#22C55E" font-size="5">98%</text>
-    <text x="232" y="124" fill="#22D3EE" font-size="5">Mechanical</text>
-    <rect x="290" y="117" width="34" height="6" rx="2" fill="#22C55E" opacity="0.4"/>
-    <text x="336" y="124" fill="#22C55E" font-size="5">85%</text>
-    <text x="232" y="136" fill="#22D3EE" font-size="5">Piping</text>
-    <rect x="290" y="129" width="30" height="6" rx="2" fill="#F59E0B" opacity="0.4"/>
-    <text x="336" y="136" fill="#F59E0B" font-size="5">72%</text>
-    <text x="232" y="148" fill="#22D3EE" font-size="5">Electrical</text>
-    <rect x="290" y="141" width="36" height="6" rx="2" fill="#22C55E" opacity="0.4"/>
-    <text x="336" y="148" fill="#22C55E" font-size="5">90%</text>
-    <text x="232" y="160" fill="#22D3EE" font-size="5">Instrumentation</text>
-    <rect x="290" y="153" width="26" height="6" rx="2" fill="#F59E0B" opacity="0.4"/>
-    <text x="336" y="160" fill="#F59E0B" font-size="5">65%</text>
-    <text x="232" y="172" fill="#22D3EE" font-size="5">Civil / HSE</text>
-    <rect x="290" y="165" width="38" height="6" rx="2" fill="#22C55E" opacity="0.4"/>
-    <text x="336" y="172" fill="#22C55E" font-size="5">95%</text>
-    <!-- Scanning animation -->
-    <rect x="290" y="105" width="2" height="68" fill="#0891B2" opacity="0.3">
-      <animate attributeName="x" values="290;380;290" dur="3s" repeatCount="indefinite"/>
-    </rect>
-  </g>
-
-  <!-- Arrow 2→3 -->
-  <line x1="395" y1="135" x2="425" y2="135" stroke="#0891B2" stroke-width="1.5" class="draw a23"/>
-  <polygon points="423,131 430,135 423,139" fill="#0891B2" class="fade a23"/>
-
-  <!-- STEP 3: Optimization Engine -->
-  <g class="pop s3">
-    <rect x="430" y="80" width="155" height="110" rx="6" fill="#161B22" stroke="#7C3AED" stroke-width="1.2"/>
-    <rect x="430" y="80" width="155" height="20" rx="6" fill="rgba(124,58,237,0.15)"/>
-    <text x="508" y="94" fill="#A78BFA" font-size="6" text-anchor="middle" font-weight="bold">03 OPTIMIZE &amp; GENERATE</text>
-    <!-- Optimization items -->
-    <circle cx="448" cy="112" r="4" fill="none" stroke="#A78BFA" stroke-width="0.8"/>
-    <text x="456" y="115" fill="#94A3B8" font-size="5">Simplify pipe routing</text>
-    <circle cx="448" cy="126" r="4" fill="none" stroke="#A78BFA" stroke-width="0.8"/>
-    <text x="456" y="129" fill="#94A3B8" font-size="5">Reduce material spec</text>
-    <circle cx="448" cy="140" r="4" fill="none" stroke="#A78BFA" stroke-width="0.8"/>
-    <text x="456" y="143" fill="#94A3B8" font-size="5">Consolidate BOMs</text>
-    <circle cx="448" cy="154" r="4" fill="none" stroke="#A78BFA" stroke-width="0.8"/>
-    <text x="456" y="157" fill="#94A3B8" font-size="5">Flag over-engineering</text>
-    <circle cx="448" cy="168" r="4" fill="none" stroke="#A78BFA" stroke-width="0.8"/>
-    <text x="456" y="171" fill="#94A3B8" font-size="5">Auto-generate drawings</text>
-    <!-- Pulsing core -->
-    <circle cx="448" cy="140" r="4" fill="#7C3AED" opacity="0.3">
-      <animate attributeName="r" values="4;8;4" dur="2s" repeatCount="indefinite"/>
-      <animate attributeName="opacity" values="0.3;0;0.3" dur="2s" repeatCount="indefinite"/>
-    </circle>
-  </g>
-
-  <!-- Arrow 3→4 -->
-  <line x1="585" y1="135" x2="615" y2="135" stroke="#0891B2" stroke-width="1.5" class="draw a34"/>
-  <polygon points="613,131 620,135 613,139" fill="#0891B2" class="fade a34"/>
-
-  <!-- STEP 4: Review & Deploy -->
-  <g class="pop s4">
-    <rect x="620" y="80" width="155" height="110" rx="6" fill="#161B22" stroke="#22C55E" stroke-width="1.2"/>
-    <rect x="620" y="80" width="155" height="20" rx="6" fill="rgba(34,197,94,0.15)"/>
-    <text x="698" y="94" fill="#22C55E" font-size="6" text-anchor="middle" font-weight="bold">04 REVIEW &amp; DEPLOY</text>
-    <rect x="635" y="108" width="8" height="8" rx="1.5" fill="none" stroke="#22C55E" stroke-width="0.8"/>
-    <path d="M637 112 L639 114.5 L643 109.5" fill="none" stroke="#22C55E" stroke-width="1"/>
-    <text x="650" y="115" fill="#94A3B8" font-size="5.5">ASME B31.1 validated</text>
-    <rect x="635" y="122" width="8" height="8" rx="1.5" fill="none" stroke="#22C55E" stroke-width="0.8"/>
-    <path d="M637 126 L639 128.5 L643 123.5" fill="none" stroke="#22C55E" stroke-width="1"/>
-    <text x="650" y="129" fill="#94A3B8" font-size="5.5">ISA-5.1 compliant</text>
-    <rect x="635" y="136" width="8" height="8" rx="1.5" fill="none" stroke="#22C55E" stroke-width="0.8"/>
-    <path d="M637 140 L639 142.5 L643 137.5" fill="none" stroke="#22C55E" stroke-width="1"/>
-    <text x="650" y="143" fill="#94A3B8" font-size="5.5">API 520 checked</text>
-    <rect x="635" y="150" width="8" height="8" rx="1.5" fill="none" stroke="#22C55E" stroke-width="0.8"/>
-    <path d="M637 154 L639 156.5 L643 151.5" fill="none" stroke="#22C55E" stroke-width="1"/>
-    <text x="650" y="157" fill="#94A3B8" font-size="5.5">Clash detection clear</text>
-    <rect x="635" y="164" width="8" height="8" rx="1.5" fill="none" stroke="#22C55E" stroke-width="0.8"/>
-    <path d="M637 168 L639 170.5 L643 165.5" fill="none" stroke="#22C55E" stroke-width="1"/>
-    <text x="650" y="171" fill="#94A3B8" font-size="5.5">Approved for IFC</text>
-  </g>
-
-  <!-- ===== FEEDBACK LOOP ARROW ===== -->
-  <g class="fade fb">
-    <!-- Right side down -->
-    <line x1="808" y1="135" x2="808" y2="250" stroke="#EF4444" stroke-width="1.2" class="feedback-line"/>
-    <!-- Bottom across -->
-    <line x1="808" y1="250" x2="30" y2="250" stroke="#EF4444" stroke-width="1.2" class="feedback-line"/>
-    <!-- Left side up to arrow -->
-    <line x1="30" y1="250" x2="30" y2="135" stroke="#EF4444" stroke-width="1.2" class="feedback-line"/>
-    <polygon points="26,108 30,98 34,108" fill="#EF4444"/>
-    <!-- Feedback label -->
-    <rect x="350" y="240" width="200" height="20" rx="10" fill="#161B22" stroke="#EF4444" stroke-width="0.8"/>
-    <text x="450" y="254" fill="#EF4444" font-size="6.5" text-anchor="middle" font-weight="bold">FEEDBACK LOOP → REOPTIMIZE PLANS</text>
-
-    <!-- Arrow from step 4 to feedback -->
-    <line x1="775" y1="135" x2="808" y2="135" stroke="#EF4444" stroke-width="1.2" class="feedback-line"/>
-  </g>
-
-  <!-- ===== SAVINGS ROW ===== -->
-  <g class="fade sv">
-    <rect x="30" y="275" width="840" height="28" rx="6" fill="rgba(34,197,94,0.08)" stroke="#22C55E" stroke-width="0.6"/>
-    <text x="450" y="293" fill="#22C55E" font-size="7" text-anchor="middle" font-weight="bold">EACH OPTIMIZATION CYCLE COMPOUNDS SAVINGS ACROSS MATERIALS, LABOR, AND REWORK</text>
-  </g>
-
-  <!-- ===== BOTTOM: Three Savings Categories ===== -->
-
-  <!-- Materials Savings -->
-  <g class="pop sv">
-    <rect x="30" y="318" width="265" height="115" rx="6" fill="#161B22" stroke="#22D3EE" stroke-width="0.8"/>
-    <rect x="30" y="318" width="265" height="22" rx="6" fill="rgba(8,145,178,0.12)"/>
-    <text x="163" y="333" fill="#22D3EE" font-size="7" text-anchor="middle" font-weight="bold">MATERIAL SAVINGS</text>
-    <text x="45" y="355" fill="#94A3B8" font-size="5.5">Consolidated BOMs eliminate double-orders</text>
-    <text x="45" y="368" fill="#94A3B8" font-size="5.5">Optimized specs reduce over-procurement</text>
-    <text x="45" y="381" fill="#94A3B8" font-size="5.5">Aligned deliveries cut storage &amp; insurance</text>
-    <text x="45" y="394" fill="#94A3B8" font-size="5.5">Predictive tracking prevents expediting</text>
-    <!-- Metric -->
-    <rect x="200" y="403" width="85" height="22" rx="4" fill="rgba(8,145,178,0.15)"/>
-    <text x="243" y="418" fill="#22D3EE" font-size="9" text-anchor="middle" font-weight="bold">-23% cost</text>
-    <text x="243" y="418" fill="#22D3EE" font-size="9" text-anchor="middle" font-weight="bold">
-      <animate attributeName="opacity" values="0.6;1;0.6" dur="3s" repeatCount="indefinite"/>
-    </text>
-  </g>
-
-  <!-- Labor Savings -->
-  <g class="pop sv" style="animation-delay:3.6s">
-    <rect x="310" y="318" width="265" height="115" rx="6" fill="#161B22" stroke="#A78BFA" stroke-width="0.8"/>
-    <rect x="310" y="318" width="265" height="22" rx="6" fill="rgba(124,58,237,0.12)"/>
-    <text x="443" y="333" fill="#A78BFA" font-size="7" text-anchor="middle" font-weight="bold">LABOR SAVINGS</text>
-    <text x="325" y="355" fill="#94A3B8" font-size="5.5">Auto-generated drawings cut engineering hours</text>
-    <text x="325" y="368" fill="#94A3B8" font-size="5.5">AI compliance checks replace manual review</text>
-    <text x="325" y="381" fill="#94A3B8" font-size="5.5">Automated reporting kills clerical detective work</text>
-    <text x="325" y="394" fill="#94A3B8" font-size="5.5">Multi-discipline sync reduces coordination lag</text>
-    <!-- Metric -->
-    <rect x="480" y="403" width="85" height="22" rx="4" fill="rgba(124,58,237,0.15)"/>
-    <text x="523" y="418" fill="#A78BFA" font-size="9" text-anchor="middle" font-weight="bold">-40% hours</text>
-  </g>
-
-  <!-- Mistake/Rework Savings -->
-  <g class="pop sv" style="animation-delay:3.8s">
-    <rect x="590" y="318" width="280" height="115" rx="6" fill="#161B22" stroke="#22C55E" stroke-width="0.8"/>
-    <rect x="590" y="318" width="280" height="22" rx="6" fill="rgba(34,197,94,0.12)"/>
-    <text x="730" y="333" fill="#22C55E" font-size="7" text-anchor="middle" font-weight="bold">REWORK ELIMINATION</text>
-    <text x="605" y="355" fill="#94A3B8" font-size="5.5">Clash detection catches conflicts before fabrication</text>
-    <text x="605" y="368" fill="#94A3B8" font-size="5.5">Standards validation prevents field rejection</text>
-    <text x="605" y="381" fill="#94A3B8" font-size="5.5">Gap analysis fills missing deliverables early</text>
-    <text x="605" y="394" fill="#94A3B8" font-size="5.5">Feedback loop learns from each project cycle</text>
-    <!-- Metric -->
-    <rect x="775" y="403" width="85" height="22" rx="4" fill="rgba(34,197,94,0.15)"/>
-    <text x="818" y="418" fill="#22C55E" font-size="9" text-anchor="middle" font-weight="bold">-60% rework</text>
-  </g>
-
-  <!-- Footer -->
-  <text x="450" y="498" fill="#334155" font-size="5" text-anchor="middle">KINDRED INDUSTRIAL SERVICES — CONTINUOUS AI OPTIMIZATION — INVENIO TECHNOLOGIES</text>
-</svg>
-</div>
+		<div class="vc_column-inner"><div class="column-image-bg-wrap column-bg-layer viewport-desktop" data-bg-pos="center center" data-bg-animation="none" data-bg-overlay="false"><div class="inner-wrap"><div class="column-image-bg" style="" data-nectar-img-src="/wp-content/uploads/kindred-flow.svg"></div></div></div>
 		<div class="wpb_wrapper">
 			
 		<div id="fws_69d7f17fe69c1" data-column-margin="custom" data-midnight="dark" class="wpb_row vc_row-fluid vc_row  column-margin-0px" style="padding-top: 0px; padding-bottom: 0px; "><div class="row-bg-wrap" data-bg-animation="none" data-bg-animation-delay="" data-bg-overlay="false"><div class="inner-wrap row-bg-layer"><div class="row-bg viewport-desktop" style=""></div></div></div><div class="row_col_wrap_12 col span_12 dark left">
 	<div style="" class="vc_col-sm-12 wpb_column column_container vc_column_container col left_padding_desktop_20px top_padding_desktop_20px right_padding_desktop_20px bottom_padding_desktop_20px flex_layout_desktop_column flex_justify_content_desktop_flex-start flex_align_items_desktop_stretch flex_wrap_desktop_nowrap flex_reverse_desktop_false flex_gap_desktop_3px instance-9" data-using-bg="true" data-border-radius="15px" data-padding-pos="all" data-has-bg-color="true" data-bg-color="#F4F2EF" data-bg-opacity="1" data-animation="" data-delay="0">
-		<div class="vc_column-inner"><div class="column-bg-overlay-wrap column-bg-layer" data-bg-animation="none"><div class="column-bg-overlay" style="opacity: 1; background-color: #F4F2EF; display:none;"></div></div>
+		<div class="vc_column-inner"><div class="column-bg-overlay-wrap column-bg-layer" data-bg-animation="none"><div class="column-bg-overlay" style="opacity: 1; background-color: #F4F2EF;"></div></div>
 			<div class="wpb_wrapper">
 				<div id="fws_69d7f17fe6abf" data-midnight="" data-column-margin="custom" class="wpb_row vc_row-fluid vc_row inner_row  column-margin-0px" style=""><div class="row-bg-wrap"> <div class="row-bg"></div> </div><div class="row_col_wrap_12_inner col span_12  left">
 	<div class="vc_col-sm-6 vc_col-xs-6 wpb_column column_container vc_column_container col child_column no-extra-padding inherit_tablet inherit_phone " data-padding-pos="all" data-has-bg-color="false" data-bg-color="" data-bg-opacity="1" data-animation="" data-delay="0">
 		<div class="vc_column-inner">
 		<div class="wpb_wrapper">
-			<div class="nectar-badge nectar-inherit-body nectar-display-block text-color-161514 padding-amount-small badge-style-default border-radius-20px font_size_desktop_14px font_size_phone_12px"><div class="nectar-badge__inner nectar-bg-extra-color-1" style="display:none">8:30 am</div></div>
+			<div class="nectar-badge nectar-inherit-body nectar-display-block text-color-161514 padding-amount-small badge-style-default border-radius-20px font_size_desktop_14px font_size_phone_12px"><div class="nectar-badge__inner nectar-bg-extra-color-1" style="visibility:hidden">8:30 am</div></div>
 		</div> 
 	</div>
 	</div> 
@@ -590,7 +367,7 @@ Operations, inventory, assets, fleet, finance, and analytics—unified into one 
       <div class="inner">
         <div class="hover-wrap"> 
           <div class="hover-wrap-inner">
-            <img decoding="async" class="img-with-animation skip-lazy nectar-lazy" data-delay="0" height="80" width="80" data-animation="none" data-nectar-img-src="/wp-content/uploads/2025/10/user.webp" style="display:none" src="data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D&#39;http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg&#39;%20viewBox%3D&#39;0%200%2080%2080&#39;%2F%3E" alt="" style="height: 44px; width: 44px;">
+            <img decoding="async" class="img-with-animation skip-lazy nectar-lazy" data-delay="0" height="80" width="80" data-animation="none" data-nectar-img-src="/wp-content/uploads/2025/10/user.webp" src="data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D&#39;http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg&#39;%20viewBox%3D&#39;0%200%2080%2080&#39;%2F%3E" alt="" style="height: 44px; width: 44px;">
           </div>
         </div>
         
@@ -599,8 +376,8 @@ Operations, inventory, assets, fleet, finance, and analytics—unified into one 
 		</div> 
 	</div>
 	</div> 
-</div></div><div style="display:none"><div class="divider-wrap height_phone_10px " data-alignment="default"><div style="height: 20px;" class="divider"></div></div><div class="nectar-responsive-text font_size_phone_14px font_line_height_1-3 nectar-link-underline-effect"><h5 style="display:none">Action Items for Backend Team</h5>
-</div><div class="nectar-responsive-text font_size_desktop_14px font_size_phone_12px font_line_height_1-3 nectar-link-underline-effect" style="color: #161514A3;"><p><span style="display:none">Task created on 7 Sep <span class="nectar-current-year">2026</span></p>
+</div></div><div class="divider-wrap height_phone_10px " data-alignment="default"><div style="height: 20px;" class="divider"></div></div><div class="nectar-responsive-text font_size_phone_14px font_line_height_1-3 nectar-link-underline-effect"><h5 style="visibility:hidden;height:0;margin:0;padding:0;overflow:hidden">Action Items for Backend Team</h5>
+</div><div class="nectar-responsive-text font_size_desktop_14px font_size_phone_12px font_line_height_1-3 nectar-link-underline-effect" style="color: #161514A3;"><p style="visibility:hidden;height:0;overflow:hidden">Task created on 7 Sep <span class="nectar-current-year">2026</span></p>
 </div><div class="divider-wrap height_phone_10px " data-alignment="default"><div style="height: 20px;" class="divider"></div></div><div id="fws_69d7f17fe70b6" data-midnight="" data-column-margin="custom" class="wpb_row vc_row-fluid vc_row inner_row  column-margin-0px" style=""><div class="row-bg-wrap"> <div class="row-bg"></div> </div><div class="row_col_wrap_12_inner col span_12  left">
 	<div class="vc_col-sm-12 wpb_column column_container vc_column_container col child_column no-extra-padding inherit_tablet inherit_phone flex_layout_desktop_row flex_justify_content_desktop_flex-start flex_align_items_desktop_center flex_wrap_desktop_nowrap flex_reverse_desktop_false flex_gap_desktop_5px " data-padding-pos="all" data-has-bg-color="false" data-bg-color="" data-bg-opacity="1" data-animation="" data-delay="0">
 		<div class="vc_column-inner">
@@ -614,7 +391,7 @@ Operations, inventory, assets, fleet, finance, and analytics—unified into one 
 		</div>
 	</div> 
 </div></div>
-</div><div class="nectar_cascading_images" data-border-radius="none" data-parallax="" data-parallax-intensity="subtle" data-animation-timing="175" style="max-width: 622.229px;"></div>
+<div class="nectar_cascading_images" data-border-radius="none" data-parallax="" data-parallax-intensity="subtle" data-animation-timing="175" style="max-width: 622.229px;"></div>
 		</div> 
 	</div>
 	</div> 
@@ -637,256 +414,13 @@ Plan strategically using historical trends and predictive analytics to stay ahea
 	</div>
 	</div> 
 
-	<div style="" class="vc_col-sm-6 wpb_column column_container vc_column_container col child_column left_padding_desktop_0px left_padding_tablet_0px top_padding_desktop_0px top_padding_tablet_0px right_padding_desktop_0px right_padding_tablet_0px bottom_padding_desktop_0px bottom_padding_tablet_0px flex_layout_desktop_column flex_justify_content_desktop_center flex_align_items_desktop_stretch flex_wrap_desktop_nowrap flex_reverse_desktop_false flex_gap_desktop_0px " data-using-bg="true" data-border-radius="15px" data-bg-cover="true" data-padding-pos="all" data-has-bg-color="false" data-bg-color="" data-bg-opacity="1" data-animation="" data-delay="0">
-		<div class="vc_column-inner"><div class="column-image-bg-wrap column-bg-layer viewport-desktop" data-bg-pos="center center" data-bg-animation="none" data-bg-overlay="false"><div class="inner-wrap"><div class="column-image-bg" style="" data-nectar-img-src=""></div></div></div>
+	<div style="" class="vc_col-sm-6 wpb_column column_container vc_column_container col child_column left_padding_desktop_10pct left_padding_tablet_20px top_padding_desktop_10pct top_padding_tablet_20px right_padding_desktop_10pct right_padding_tablet_20px bottom_padding_desktop_10pct bottom_padding_tablet_20px flex_layout_desktop_column flex_justify_content_desktop_center flex_align_items_desktop_stretch flex_wrap_desktop_nowrap flex_reverse_desktop_false flex_gap_desktop_10px " data-using-bg="true" data-border-radius="15px" data-bg-cover="true" data-padding-pos="all" data-has-bg-color="false" data-bg-color="" data-bg-opacity="1" data-animation="" data-delay="0">
+		<div class="vc_column-inner"><div class="column-image-bg-wrap column-bg-layer viewport-desktop" data-bg-pos="center center" data-bg-animation="none" data-bg-overlay="false"><div class="inner-wrap"><div class="column-image-bg" style="" data-nectar-img-src="/wp-content/uploads/msr-dashboard.svg"></div></div></div>
 		<div class="wpb_wrapper">
 			
-	<div style="width:100%;border-radius:12px;overflow:hidden;"><svg viewBox="0 0 900 520" xmlns="http://www.w3.org/2000/svg">
-  <style>
-    @keyframes popIn { from { opacity: 0; transform: scale(0.9); } to { opacity: 1; transform: scale(1); } }
-    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-    @keyframes slideRight { from { transform: translateX(-10px); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
-    @keyframes countPulse { 0%{fill:#1E293B} 50%{fill:#1E6CB5} 100%{fill:#1E293B} }
-    @keyframes barGrow1 { 0%{width:252px} 50%{width:262px} 100%{width:252px} }
-    @keyframes barGrow2 { 0%{width:210px} 50%{width:222px} 100%{width:210px} }
-    @keyframes barGrow3 { 0%{width:179px} 50%{width:188px} 100%{width:179px} }
-    @keyframes barGrow4 { 0%{width:224px} 50%{width:234px} 100%{width:224px} }
-    @keyframes barGrow5 { 0%{width:154px} 50%{width:166px} 100%{width:154px} }
-    @keyframes deliveredGrow { 0%{width:160px} 50%{width:168px} 100%{width:160px} }
-    @keyframes transitPulse { 0%{width:24px} 50%{width:32px} 100%{width:24px} }
-    @keyframes chartShift { 0%{transform:translateY(0)} 50%{transform:translateY(-3px)} 100%{transform:translateY(0)} }
-    @keyframes newRow { 0%{opacity:0;transform:translateY(-8px)} 30%{opacity:1;transform:translateY(0)} 90%{opacity:1} 100%{opacity:0} }
-    @keyframes cycleActivity {
-      0%{opacity:1} 80%{opacity:1} 90%{opacity:0} 100%{opacity:0}
-    }
-    @keyframes slideIn1 { 0%{transform:translateX(20px);opacity:0} 10%{transform:translateX(0);opacity:1} 90%{opacity:1} 100%{opacity:0} }
-    @keyframes slideIn2 { 0%{opacity:0} 10%{opacity:0} 10.1%{transform:translateX(20px);opacity:0} 20%{transform:translateX(0);opacity:1} 90%{opacity:1} 100%{opacity:0} }
-    @keyframes slideIn3 { 0%{opacity:0} 20%{opacity:0} 20.1%{transform:translateX(20px);opacity:0} 30%{transform:translateX(0);opacity:1} 90%{opacity:1} 100%{opacity:0} }
-    @keyframes slideIn4 { 0%{opacity:0} 30%{opacity:0} 30.1%{transform:translateX(20px);opacity:0} 40%{transform:translateX(0);opacity:1} 90%{opacity:1} 100%{opacity:0} }
-    @keyframes slideIn5 { 0%{opacity:0} 40%{opacity:0} 40.1%{transform:translateX(20px);opacity:0} 50%{transform:translateX(0);opacity:1} 90%{opacity:1} 100%{opacity:0} }
-    @keyframes scanLine { 0%{transform:translateX(0)} 100%{transform:translateX(460px)} }
-
-    .pop { opacity: 0; animation: popIn 0.4s ease forwards; }
-    .fade { opacity: 0; animation: fadeIn 0.5s ease forwards; }
-    .d1 { animation-delay: 0.2s; } .d2 { animation-delay: 0.4s; } .d3 { animation-delay: 0.6s; }
-    .d4 { animation-delay: 0.8s; } .d5 { animation-delay: 1.0s; } .d6 { animation-delay: 1.2s; }
-    .d7 { animation-delay: 1.4s; } .d8 { animation-delay: 1.6s; } .d9 { animation-delay: 1.8s; }
-    text { font-family: -apple-system, 'SF Pro Display', 'Segoe UI', sans-serif; }
-    .mono { font-family: 'SF Mono', 'Fira Code', monospace; }
-    .kpi-card { cursor: pointer; transition: filter 0.2s; }
-    .kpi-card:hover { filter: drop-shadow(0 4px 12px rgba(0,0,0,0.15)); }
-    .kpi-card:hover .kpi-bg { fill: #F0F9FF; }
-    .bar-row { cursor: pointer; }
-    .bar-row:hover .bar-fill { filter: brightness(1.15); }
-    .tooltip { opacity: 0; transition: opacity 0.2s; pointer-events: none; }
-    .kpi-card:hover .tooltip { opacity: 1; }
-    .bar-row:hover .tooltip { opacity: 1; }
-    .chart-point { cursor: pointer; }
-    .chart-point:hover { r: 6; }
-  </style>
-
-  <rect width="900" height="520" fill="#F8FAFC" rx="8"/>
-
-  <!-- Nav Bar -->
-  <rect x="0" y="0" width="900" height="44" fill="#FFFFFF" rx="8"/>
-  <rect x="0" y="42" width="900" height="1" fill="#E2E8F0"/>
-  <g class="pop d1">
-    <rect x="20" y="10" width="24" height="24" rx="6" fill="#1E6CB5"/>
-    <text x="32" y="27" fill="#FFFFFF" font-size="11" text-anchor="middle" font-weight="bold">M</text>
-    <text x="54" y="28" fill="#1E293B" font-size="11" font-weight="700">Material Status Report</text>
-    <text x="280" y="28" fill="#94A3B8" font-size="9">Greenfield LNG Terminal</text>
-  </g>
-  <g class="fade d2">
-    <text x="520" y="28" fill="#64748B" font-size="9">Dashboard</text>
-    <rect x="512" y="32" width="52" height="2" rx="1" fill="#1E6CB5"/>
-    <text x="600" y="28" fill="#94A3B8" font-size="9">Purchase Orders</text>
-    <text x="700" y="28" fill="#94A3B8" font-size="9">Shipments</text>
-    <text x="790" y="28" fill="#94A3B8" font-size="9">Installation</text>
-  </g>
-  <g class="fade d2">
-    <circle cx="860" cy="22" r="4" fill="#22C55E"><animate attributeName="opacity" values="1;0.4;1" dur="2s" repeatCount="indefinite"/></circle>
-    <text x="870" y="26" fill="#64748B" font-size="7">Live</text>
-  </g>
-
-  <!-- KPI 1: POs - counter ticks up -->
-  <g class="pop d2 kpi-card">
-    <rect x="20" y="56" width="205" height="72" rx="8" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1" class="kpi-bg"/>
-    <text x="36" y="76" fill="#64748B" font-size="8">TOTAL PURCHASE ORDERS</text>
-    <text x="36" y="104" fill="#1E293B" font-size="24" font-weight="700">
-      <animate attributeName="textContent" values="847;848;848;849;849;849;850;850;847" dur="20s" repeatCount="indefinite" fill="freeze"/>847
-    </text>
-    <text x="110" y="104" fill="#22C55E" font-size="9" font-weight="600"><animate attributeName="fill" values="#22C55E;#16A34A;#22C55E" dur="4s" repeatCount="indefinite"/>+12 this week</text>
-    <rect x="180" y="66" width="32" height="32" rx="8" fill="#EFF6FF"/>
-    <text x="196" y="88" fill="#1E6CB5" font-size="16" text-anchor="middle">📋</text>
-    <g class="tooltip"><rect x="30" y="108" width="140" height="20" rx="4" fill="#1E293B"/><text x="100" y="122" fill="#FFFFFF" font-size="7" text-anchor="middle">562 delivered | 285 pending</text></g>
-  </g>
-
-  <!-- KPI 2: Value -->
-  <g class="pop d3 kpi-card">
-    <rect x="237" y="56" width="205" height="72" rx="8" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1" class="kpi-bg"/>
-    <text x="253" y="76" fill="#64748B" font-size="8">TOTAL PO VALUE</text>
-    <text x="253" y="104" fill="#1E293B" font-size="24" font-weight="700">$4.98M</text>
-    <rect x="397" y="66" width="32" height="32" rx="8" fill="#F0FDF4"/>
-    <text x="413" y="88" fill="#22C55E" font-size="16" text-anchor="middle">💰</text>
-    <g class="tooltip"><rect x="247" y="108" width="155" height="20" rx="4" fill="#1E293B"/><text x="325" y="122" fill="#FFFFFF" font-size="7" text-anchor="middle">$3.2M committed | $1.78M invoiced</text></g>
-  </g>
-
-  <!-- KPI 3: Shipments - delayed count pulses -->
-  <g class="pop d4 kpi-card">
-    <rect x="454" y="56" width="205" height="72" rx="8" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1" class="kpi-bg"/>
-    <text x="470" y="76" fill="#64748B" font-size="8">SHIPMENTS IN TRANSIT</text>
-    <text x="470" y="104" fill="#1E293B" font-size="24" font-weight="700">127</text>
-    <text x="540" y="104" fill="#F59E0B" font-size="9" font-weight="600"><animate attributeName="opacity" values="1;0.4;1" dur="3s" repeatCount="indefinite"/>19 delayed</text>
-    <rect x="614" y="66" width="32" height="32" rx="8" fill="#FFFBEB"/>
-    <text x="630" y="88" fill="#F59E0B" font-size="16" text-anchor="middle">🚛</text>
-    <g class="tooltip"><rect x="464" y="108" width="170" height="20" rx="4" fill="#1E293B"/><text x="549" y="122" fill="#FFFFFF" font-size="7" text-anchor="middle">46 delivered | 7 in transit | 74 not RTS</text></g>
-  </g>
-
-  <!-- KPI 4: Installation - percentage ticks -->
-  <g class="pop d5 kpi-card">
-    <rect x="671" y="56" width="210" height="72" rx="8" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1" class="kpi-bg"/>
-    <text x="687" y="76" fill="#64748B" font-size="8">INSTALLATION ITEMS</text>
-    <text x="687" y="104" fill="#1E293B" font-size="24" font-weight="700">2,456</text>
-    <text x="780" y="104" fill="#22C55E" font-size="9" font-weight="600">68% complete</text>
-    <rect x="836" y="66" width="32" height="32" rx="8" fill="#F0FDF4"/>
-    <text x="852" y="88" fill="#22C55E" font-size="16" text-anchor="middle">🔧</text>
-    <g class="tooltip"><rect x="681" y="108" width="160" height="20" rx="4" fill="#1E293B"/><text x="761" y="122" fill="#FFFFFF" font-size="7" text-anchor="middle">1,670 installed | 786 remaining</text></g>
-  </g>
-
-  <!-- Chart with animated scan line and breathing data points -->
-  <g class="pop d6">
-    <rect x="20" y="142" width="530" height="180" rx="8" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
-    <text x="36" y="164" fill="#1E293B" font-size="10" font-weight="700">Delivery Timeline</text>
-    <text x="36" y="176" fill="#94A3B8" font-size="7">Monthly shipment arrivals vs scheduled</text>
-
-    <text x="50" y="200" fill="#94A3B8" font-size="6" text-anchor="end" class="mono">100</text>
-    <text x="50" y="228" fill="#94A3B8" font-size="6" text-anchor="end" class="mono">75</text>
-    <text x="50" y="256" fill="#94A3B8" font-size="6" text-anchor="end" class="mono">50</text>
-    <text x="50" y="284" fill="#94A3B8" font-size="6" text-anchor="end" class="mono">25</text>
-    <text x="50" y="308" fill="#94A3B8" font-size="6" text-anchor="end" class="mono">0</text>
-    <line x1="58" y1="197" x2="530" y2="197" stroke="#F1F5F9" stroke-width="0.5"/>
-    <line x1="58" y1="225" x2="530" y2="225" stroke="#F1F5F9" stroke-width="0.5"/>
-    <line x1="58" y1="253" x2="530" y2="253" stroke="#F1F5F9" stroke-width="0.5"/>
-    <line x1="58" y1="281" x2="530" y2="281" stroke="#F1F5F9" stroke-width="0.5"/>
-    <line x1="58" y1="305" x2="530" y2="305" stroke="#F1F5F9" stroke-width="0.5"/>
-
-    <polyline points="80,270 130,255 180,240 230,225 280,210 330,200 380,197 430,200 480,210 520,220" fill="none" stroke="#CBD5E1" stroke-width="1.5" stroke-dasharray="4,3"/>
-
-    <!-- Animated chart line that breathes -->
-    <polyline fill="none" stroke="#1E6CB5" stroke-width="2">
-      <animate attributeName="points" dur="8s" repeatCount="indefinite" values="80,275 130,260 180,248 230,232 280,218 330,208 380,200 430,195 480,198 520,202;80,272 130,257 180,245 230,228 280,215 330,205 380,197 430,192 480,195 520,199;80,275 130,260 180,248 230,232 280,218 330,208 380,200 430,195 480,198 520,202"/>
-    </polyline>
-
-    <polygon fill="url(#blueGrad)" opacity="0.15">
-      <animate attributeName="points" dur="8s" repeatCount="indefinite" values="80,275 130,260 180,248 230,232 280,218 330,208 380,200 430,195 480,198 520,202 520,305 80,305;80,272 130,257 180,245 230,228 280,215 330,205 380,197 430,192 480,195 520,199 520,305 80,305;80,275 130,260 180,248 230,232 280,218 330,208 380,200 430,195 480,198 520,202 520,305 80,305"/>
-    </polygon>
-
-    <!-- Scanning highlight line -->
-    <rect x="58" y="190" width="3" height="118" rx="1" fill="#1E6CB5" opacity="0.15">
-      <animate attributeName="x" values="58;530;58" dur="6s" repeatCount="indefinite"/>
-    </rect>
-
-    <!-- Breathing data points -->
-    <circle cx="80" cy="275" r="3" fill="#FFF" stroke="#1E6CB5" stroke-width="1.5"><animate attributeName="cy" values="275;272;275" dur="8s" repeatCount="indefinite"/></circle>
-    <circle cx="130" cy="260" r="3" fill="#FFF" stroke="#1E6CB5" stroke-width="1.5"><animate attributeName="cy" values="260;257;260" dur="8s" repeatCount="indefinite"/></circle>
-    <circle cx="180" cy="248" r="3" fill="#FFF" stroke="#1E6CB5" stroke-width="1.5"><animate attributeName="cy" values="248;245;248" dur="8s" repeatCount="indefinite"/></circle>
-    <circle cx="230" cy="232" r="3" fill="#FFF" stroke="#1E6CB5" stroke-width="1.5"><animate attributeName="cy" values="232;228;232" dur="8s" repeatCount="indefinite"/></circle>
-    <circle cx="280" cy="218" r="3" fill="#FFF" stroke="#1E6CB5" stroke-width="1.5"><animate attributeName="cy" values="218;215;218" dur="8s" repeatCount="indefinite"/></circle>
-    <circle cx="330" cy="208" r="3" fill="#FFF" stroke="#1E6CB5" stroke-width="1.5"><animate attributeName="cy" values="208;205;208" dur="8s" repeatCount="indefinite"/></circle>
-    <circle cx="380" cy="200" r="3" fill="#FFF" stroke="#1E6CB5" stroke-width="1.5"><animate attributeName="cy" values="200;197;200" dur="8s" repeatCount="indefinite"/></circle>
-    <circle cx="430" cy="195" r="4" fill="#1E6CB5" stroke="#FFF" stroke-width="1.5"><animate attributeName="cy" values="195;192;195" dur="8s" repeatCount="indefinite"/><animate attributeName="r" values="4;6;4" dur="2s" repeatCount="indefinite"/></circle>
-    <circle cx="480" cy="198" r="3" fill="#FFF" stroke="#1E6CB5" stroke-width="1.5"><animate attributeName="cy" values="198;195;198" dur="8s" repeatCount="indefinite"/></circle>
-    <circle cx="520" cy="202" r="3" fill="#FFF" stroke="#1E6CB5" stroke-width="1.5"><animate attributeName="cy" values="202;199;202" dur="8s" repeatCount="indefinite"/></circle>
-
-    <text x="80" y="316" fill="#94A3B8" font-size="6" text-anchor="middle">Jan</text>
-    <text x="130" y="316" fill="#94A3B8" font-size="6" text-anchor="middle">Feb</text>
-    <text x="180" y="316" fill="#94A3B8" font-size="6" text-anchor="middle">Mar</text>
-    <text x="230" y="316" fill="#94A3B8" font-size="6" text-anchor="middle">Apr</text>
-    <text x="280" y="316" fill="#94A3B8" font-size="6" text-anchor="middle">May</text>
-    <text x="330" y="316" fill="#94A3B8" font-size="6" text-anchor="middle">Jun</text>
-    <text x="380" y="316" fill="#94A3B8" font-size="6" text-anchor="middle">Jul</text>
-    <text x="430" y="316" fill="#94A3B8" font-size="6" text-anchor="middle">Aug</text>
-    <text x="480" y="316" fill="#94A3B8" font-size="6" text-anchor="middle">Sep</text>
-    <text x="520" y="316" fill="#94A3B8" font-size="6" text-anchor="middle">Oct</text>
-    <line x1="400" y1="160" x2="420" y2="160" stroke="#1E6CB5" stroke-width="2"/>
-    <text x="425" y="163" fill="#64748B" font-size="7">Actual</text>
-    <line x1="470" y1="160" x2="490" y2="160" stroke="#CBD5E1" stroke-width="1.5" stroke-dasharray="4,3"/>
-    <text x="495" y="163" fill="#64748B" font-size="7">Scheduled</text>
-  </g>
-
-  <defs><linearGradient id="blueGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" style="stop-color:#1E6CB5;stop-opacity:0.3"/><stop offset="100%" style="stop-color:#1E6CB5;stop-opacity:0"/></linearGradient></defs>
-
-  <!-- Shipment Status with breathing bars -->
-  <g class="pop d7">
-    <rect x="562" y="142" width="320" height="180" rx="8" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
-    <text x="578" y="164" fill="#1E293B" font-size="10" font-weight="700">Shipment Status</text>
-
-    <g><circle cx="588" cy="188" r="5" fill="#22C55E"/><text x="600" y="191" fill="#1E293B" font-size="8" font-weight="600">Delivered</text><text x="820" y="191" fill="#1E293B" font-size="9" font-weight="700" text-anchor="end">46</text><rect x="600" y="196" width="220" height="6" rx="3" fill="#F1F5F9"/><rect x="600" y="196" rx="3" fill="#22C55E" height="6"><animate attributeName="width" values="160;168;160" dur="5s" repeatCount="indefinite"/></rect></g>
-
-    <g><circle cx="588" cy="222" r="5" fill="#3B82F6"/><text x="600" y="225" fill="#1E293B" font-size="8" font-weight="600">In Transit</text><text x="820" y="225" fill="#1E293B" font-size="9" font-weight="700" text-anchor="end">7</text><rect x="600" y="230" width="220" height="6" rx="3" fill="#F1F5F9"/><rect x="600" y="230" rx="3" fill="#3B82F6" height="6"><animate attributeName="width" values="24;32;24" dur="3s" repeatCount="indefinite"/></rect></g>
-
-    <g><circle cx="588" cy="256" r="5" fill="#F59E0B"/><text x="600" y="259" fill="#1E293B" font-size="8" font-weight="600">Not Ready to Ship</text><text x="820" y="259" fill="#1E293B" font-size="9" font-weight="700" text-anchor="end">74</text><rect x="600" y="264" width="220" height="6" rx="3" fill="#F1F5F9"/><rect x="600" y="264" rx="3" fill="#F59E0B" height="6"><animate attributeName="width" values="128;122;128" dur="6s" repeatCount="indefinite"/></rect></g>
-
-    <g><circle cx="588" cy="290" r="5" fill="#8B5CF6"/><text x="600" y="293" fill="#1E293B" font-size="8" font-weight="600">Ready to Ship</text><text x="820" y="293" fill="#1E293B" font-size="9" font-weight="700" text-anchor="end">0</text><rect x="600" y="298" width="220" height="6" rx="3" fill="#F1F5F9"/></g>
-  </g>
-
-  <!-- Installation bars that slowly grow -->
-  <g class="pop d8">
-    <rect x="20" y="336" width="440" height="170" rx="8" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
-    <text x="36" y="358" fill="#1E293B" font-size="10" font-weight="700">Installation Progress by Discipline</text>
-
-    <g class="bar-row"><text x="36" y="382" fill="#475569" font-size="8">Civil</text><rect x="110" y="374" width="280" height="10" rx="4" fill="#F1F5F9"/><rect x="110" y="374" height="10" rx="4" fill="#22C55E" class="bar-fill"><animate attributeName="width" values="252;258;252" dur="7s" repeatCount="indefinite"/></rect><text x="400" y="383" fill="#22C55E" font-size="8" font-weight="600" class="mono">90%</text><g class="tooltip"><rect x="300" y="362" width="70" height="14" rx="3" fill="#1E293B"/><text x="335" y="372" fill="#FFF" font-size="6" text-anchor="middle">422 of 469</text></g></g>
-
-    <g class="bar-row"><text x="36" y="402" fill="#475569" font-size="8">Electrical</text><rect x="110" y="394" width="280" height="10" rx="4" fill="#F1F5F9"/><rect x="110" y="394" height="10" rx="4" fill="#3B82F6" class="bar-fill"><animate attributeName="width" values="210;218;210" dur="6s" repeatCount="indefinite"/></rect><text x="400" y="403" fill="#3B82F6" font-size="8" font-weight="600" class="mono">75%</text><g class="tooltip"><rect x="260" y="382" width="70" height="14" rx="3" fill="#1E293B"/><text x="295" y="392" fill="#FFF" font-size="6" text-anchor="middle">384 of 512</text></g></g>
-
-    <g class="bar-row"><text x="36" y="422" fill="#475569" font-size="8">Instrumentation</text><rect x="110" y="414" width="280" height="10" rx="4" fill="#F1F5F9"/><rect x="110" y="414" height="10" rx="4" fill="#3B82F6" class="bar-fill"><animate attributeName="width" values="179;186;179" dur="8s" repeatCount="indefinite"/></rect><text x="400" y="423" fill="#3B82F6" font-size="8" font-weight="600" class="mono">64%</text><g class="tooltip"><rect x="230" y="402" width="70" height="14" rx="3" fill="#1E293B"/><text x="265" y="412" fill="#FFF" font-size="6" text-anchor="middle">291 of 455</text></g></g>
-
-    <g class="bar-row"><text x="36" y="442" fill="#475569" font-size="8">Mechanical</text><rect x="110" y="434" width="280" height="10" rx="4" fill="#F1F5F9"/><rect x="110" y="434" height="10" rx="4" fill="#22C55E" class="bar-fill"><animate attributeName="width" values="224;232;224" dur="5s" repeatCount="indefinite"/></rect><text x="400" y="443" fill="#22C55E" font-size="8" font-weight="600" class="mono">80%</text><g class="tooltip"><rect x="270" y="422" width="70" height="14" rx="3" fill="#1E293B"/><text x="305" y="432" fill="#FFF" font-size="6" text-anchor="middle">528 of 660</text></g></g>
-
-    <g class="bar-row"><text x="36" y="462" fill="#475569" font-size="8">Steel</text><rect x="110" y="454" width="280" height="10" rx="4" fill="#F1F5F9"/><rect x="110" y="454" height="10" rx="4" fill="#F59E0B" class="bar-fill"><animate attributeName="width" values="154;162;154" dur="9s" repeatCount="indefinite"/></rect><text x="400" y="463" fill="#F59E0B" font-size="8" font-weight="600" class="mono">55%</text><g class="tooltip"><rect x="210" y="442" width="70" height="14" rx="3" fill="#1E293B"/><text x="245" y="452" fill="#FFF" font-size="6" text-anchor="middle">198 of 360</text></g></g>
-
-    <rect x="36" y="476" width="404" height="20" rx="6" fill="#EFF6FF"/>
-    <text x="46" y="490" fill="#1E6CB5" font-size="8" font-weight="700">OVERALL</text>
-    <text x="410" y="490" fill="#1E6CB5" font-size="10" font-weight="700" text-anchor="end">68%</text>
-    <rect x="110" y="482" width="280" height="5" rx="2" fill="#DBEAFE"/>
-    <rect x="110" y="482" height="5" rx="2" fill="#1E6CB5"><animate attributeName="width" values="190;196;190" dur="6s" repeatCount="indefinite"/></rect>
-  </g>
-
-  <!-- Activity Feed - cycling through items -->
-  <g class="pop d9">
-    <rect x="472" y="336" width="410" height="170" rx="8" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1"/>
-    <text x="488" y="358" fill="#1E293B" font-size="10" font-weight="700">Recent Activity</text>
-    <circle cx="860" cy="352" r="4" fill="#22C55E"><animate attributeName="opacity" values="1;0.3;1" dur="1.5s" repeatCount="indefinite"/></circle>
-    <text x="848" y="356" fill="#64748B" font-size="7" text-anchor="end">Live</text>
-
-    <!-- Set 1 of activity items -->
-    <g opacity="0"><animate attributeName="opacity" values="0;1;1;1;1;0" dur="12s" repeatCount="indefinite"/>
-      <g><circle cx="498" cy="380" r="4" fill="#22C55E"/><text x="510" y="378" fill="#1E293B" font-size="7.5" font-weight="600">PO-4521 Delivered</text><text x="510" y="389" fill="#94A3B8" font-size="6.5">Heat exchanger E-101 arrived at Cedar Creek</text><text x="850" y="383" fill="#94A3B8" font-size="6.5" text-anchor="end">2m ago</text></g>
-      <rect x="488" y="396" width="380" height="0.5" fill="#F1F5F9"/>
-      <g><circle cx="498" cy="410" r="4" fill="#3B82F6"/><text x="510" y="408" fill="#1E293B" font-size="7.5" font-weight="600">Shipment SH-892 In Transit</text><text x="510" y="419" fill="#94A3B8" font-size="6.5">MCC Crates departed Riverbend Yard</text><text x="850" y="413" fill="#94A3B8" font-size="6.5" text-anchor="end">15m ago</text></g>
-      <rect x="488" y="426" width="380" height="0.5" fill="#F1F5F9"/>
-      <g><circle cx="498" cy="440" r="4" fill="#F59E0B"/><text x="510" y="438" fill="#1E293B" font-size="7.5" font-weight="600">Exception: PO-4498</text><text x="510" y="449" fill="#94A3B8" font-size="6.5">Cathodic Protection Rectifier — qty mismatch</text><text x="850" y="443" fill="#F59E0B" font-size="6.5" text-anchor="end">1h ago</text></g>
-      <rect x="488" y="456" width="380" height="0.5" fill="#F1F5F9"/>
-      <g><circle cx="498" cy="470" r="4" fill="#8B5CF6"/><text x="510" y="468" fill="#1E293B" font-size="7.5" font-weight="600">Install: Mechanical 80%</text><text x="510" y="479" fill="#94A3B8" font-size="6.5">Compressor M-201 signed off by J. Hartley</text><text x="850" y="473" fill="#94A3B8" font-size="6.5" text-anchor="end">3h ago</text></g>
-      <rect x="488" y="486" width="380" height="0.5" fill="#F1F5F9"/>
-      <g><circle cx="498" cy="498" r="4" fill="#22C55E"/><text x="510" y="496" fill="#1E293B" font-size="7.5" font-weight="600">QR Scan: BOG Compressor</text><text x="510" y="506" fill="#94A3B8" font-size="6.5">Received at laydown — inspection passed</text><text x="850" y="500" fill="#94A3B8" font-size="6.5" text-anchor="end">5h ago</text></g>
-    </g>
-
-    <!-- Set 2 of activity items -->
-    <g opacity="0"><animate attributeName="opacity" values="0;0;0;1;1;1;1;0;0;0;0;0" dur="12s" repeatCount="indefinite" begin="6s"/>
-      <g><circle cx="498" cy="380" r="4" fill="#3B82F6"/><text x="510" y="378" fill="#1E293B" font-size="7.5" font-weight="600">PO-4533 Released</text><text x="510" y="389" fill="#94A3B8" font-size="6.5">HSS Columns 12x12 cleared for shipment</text><text x="850" y="383" fill="#94A3B8" font-size="6.5" text-anchor="end">just now</text></g>
-      <rect x="488" y="396" width="380" height="0.5" fill="#F1F5F9"/>
-      <g><circle cx="498" cy="410" r="4" fill="#22C55E"/><text x="510" y="408" fill="#1E293B" font-size="7.5" font-weight="600">PO-4519 Delivered</text><text x="510" y="419" fill="#94A3B8" font-size="6.5">Bus Duct Assembly arrived at Freeport</text><text x="850" y="413" fill="#94A3B8" font-size="6.5" text-anchor="end">8m ago</text></g>
-      <rect x="488" y="426" width="380" height="0.5" fill="#F1F5F9"/>
-      <g><circle cx="498" cy="440" r="4" fill="#EF4444"/><text x="510" y="438" fill="#1E293B" font-size="7.5" font-weight="600">ALERT: Tracker offline</text><text x="510" y="449" fill="#94A3B8" font-size="6.5">GPS Tracker #412 — last ping 4h ago</text><text x="850" y="443" fill="#EF4444" font-size="6.5" text-anchor="end">4h ago</text></g>
-      <rect x="488" y="456" width="380" height="0.5" fill="#F1F5F9"/>
-      <g><circle cx="498" cy="470" r="4" fill="#22C55E"/><text x="510" y="468" fill="#1E293B" font-size="7.5" font-weight="600">Install: Civil 90%</text><text x="510" y="479" fill="#94A3B8" font-size="6.5">Foundation pour Section C complete</text><text x="850" y="473" fill="#94A3B8" font-size="6.5" text-anchor="end">6h ago</text></g>
-      <rect x="488" y="486" width="380" height="0.5" fill="#F1F5F9"/>
-      <g><circle cx="498" cy="498" r="4" fill="#F59E0B"/><text x="510" y="496" fill="#1E293B" font-size="7.5" font-weight="600">Exception: SH-901</text><text x="510" y="506" fill="#94A3B8" font-size="6.5">Coupling Assembly — damaged in transit</text><text x="850" y="500" fill="#F59E0B" font-size="6.5" text-anchor="end">8h ago</text></g>
-    </g>
-  </g>
-</svg>
-</div>
+	<div class="wpb_gallery wpb_content_element clearfix">
+		<div class="wpb_wrapper"><div class="wpb_gallery_slidesnectarslider_style" data-onclick="link_no" data-interval="5"><div class="nectar-slider-wrap nectar-slider-enabled loaded" style="height: 400px" data-image-rendering="default" data-flexible-height="" data-overall_style="classic" data-button-styling="btn_with_count" data-fullscreen="false" data-full-width="false" data-parallax="false" data-autorotate="5500" id="ns-id-69d7f17fe81b2" autoplay-id="0"><div class="swiper-container" style="height: 401px; width: 497.812px;" data-loop="false" data-height="400" data-bullets="" data-bullet_style="see_through" data-arrows="true" data-desktop-swipe="true" data-settings=""><div class="swiper-wrapper no-transform" style="width: 497.792px; height: 401px;"><div class="swiper-slide swiper-slide-visible swiper-slide-active no-transform" data-bg-alignment="center" data-color-scheme="light" data-x-pos="centered" data-y-pos="middle" style="width: 497.792px; height: 401px;"><div class="image-bg" style="display:flex;align-items:center;justify-content:center;background:#F8FAFC;"><iframe src="/wp-content/uploads/msr-dashboard.svg" style="width:100%;height:100%;border:none;" title="MSR Dashboard"></iframe></div> </div><!--/swiper-slide--></div><a href="/" class="slider-prev" style="opacity: 1;"><i class="icon-salient-left-arrow"></i> <div class="slide-count"> <span class="slide-current">1</span> <i class="icon-salient-right-line"></i> <span class="slide-total"></span> </div> </a>
+			     		<a href="/" class="slider-next" style="opacity: 1;"><i class="icon-salient-right-arrow"></i> <div class="slide-count"> <span class="slide-current">1</span> <i class="icon-salient-right-line"></i> <span class="slide-total"></span> </div> </a><div class="nectar-slider-loading" style="display: none;"></div></div></div></div>
 		</div> 
 	</div> 
 		</div> 
@@ -915,7 +449,7 @@ Plan strategically using historical trends and predictive analytics to stay ahea
 	<div style="" class="vc_col-sm-6 wpb_column column_container vc_column_container col child_column left_padding_desktop_10pct left_padding_tablet_20px top_padding_desktop_10pct top_padding_tablet_20px right_padding_desktop_10pct right_padding_tablet_20px bottom_padding_desktop_10pct bottom_padding_tablet_20px flex_layout_desktop_column flex_justify_content_desktop_center flex_align_items_desktop_stretch flex_wrap_desktop_nowrap flex_reverse_desktop_false flex_gap_desktop_30px " data-using-bg="true" data-border-radius="15px" data-bg-cover="true" data-padding-pos="all" data-has-bg-color="false" data-bg-color="" data-bg-opacity="1" data-animation="" data-delay="0">
 		<div class="vc_column-inner"><div class="column-image-bg-wrap column-bg-layer viewport-desktop" data-bg-pos="center top" data-bg-animation="none" data-bg-overlay="false"><div class="inner-wrap"><div class="column-image-bg" style="" data-nectar-img-src="/wp-content/uploads/2025/10/man-flowers.webp"></div></div></div>
 		<div class="wpb_wrapper">
-			
+			<div class="nectar-badge nectar-inherit-body nectar-display-block text-color-F4F2EF padding-amount-small badge-style-default border-radius-20px font_size_desktop_15px font_size_phone_9px font_line_height_1px backdrop_filter_blur_16" style="margin-left: auto;" data-bg-color-custom="#EBE9E51C"><div class="nectar-badge__inner"></div></div>
 		</div> 
 	</div>
 	</div> 
@@ -1109,8 +643,8 @@ Dynamic update of the estimated time of arrival (ETA), taking into account traff
 		<div class="vc_column-inner">
 			<div class="wpb_wrapper">
 				<div class="nectar-responsive-text nectar-link-underline-effect"><h6>Case Study</h6>
-</div><div class="nectar-responsive-text nectar-link-underline-effect"><h2>Invenio has <em>completely transformed</em> how we manage project delivery. What used to take weeks of manual coordination now happens in real-time with full visibility across every discipline we’re proud of.</h2>
-</div><div class="nectar-responsive-text nectar-link-underline-effect"><h2>Our people are more engaged, communication flows naturally, and we’ve seen measurable improvements in both morale and productivity</h2>
+</div><div class="nectar-responsive-text nectar-link-underline-effect"><h2>Invenio has <em>completely transformed</em> how we manage project delivery. What used to take weeks of manual coordination now happens in real-time with full visibility across every discipline.</h2>
+</div><div class="nectar-responsive-text nectar-link-underline-effect"><h2>Our engineering teams move faster, compliance is automated, and we’ve seen measurable reductions in rework, procurement delays, and material losses</h2>
 </div><div id="fws_69d7f17fea000" data-midnight="" data-column-margin="none" class="wpb_row vc_row-fluid vc_row inner_row" style=""><div class="row-bg-wrap"> <div class="row-bg" style="height: 1162.61px;"></div> </div><div class="row_col_wrap_12_inner col span_12  left">
 	<div class="vc_col-sm-12 wpb_column column_container vc_column_container col child_column no-extra-padding inherit_tablet inherit_phone flex_gap_desktop_10px " data-padding-pos="all" data-has-bg-color="false" data-bg-color="" data-bg-opacity="1" data-animation="" data-delay="0">
 		<div class="vc_column-inner">
@@ -1382,7 +916,7 @@ Dynamic update of the estimated time of arrival (ETA), taking into account traff
 		<div class="vc_column-inner">
 			<div class="wpb_wrapper">
 				<div class="nectar-responsive-text nectar-link-underline-effect"><h2>Everything you need to know</h2>
-</div><div class="nectar-cta  border_radius_100px alignment_tablet_default alignment_phone_default display_tablet_inherit display_phone_inherit " data-color="accent-color" data-using-bg="true" data-style="text-reveal" data-display="inline" data-alignment="left" data-text-color="custom" style="margin-top: 10px;  --nectar-text-color: #F6F4F0; --nectar-button-color: var(--nectar-accent-color); --nectar-icon-gap: 20px; "><span style="color: #F6F4F0;" class="nectar-button-type"><span class="link_wrap" style="padding-top: 0.5em; padding-right: 1.4em; padding-bottom: 0.5em; padding-left: 1.4em;"><a class='link_text' href='/contact' role='button'><span class="text nectar-text-reveal-button__text" data-text="Contact us">Contact us</span></a></span></span></div>
+</div><div class="nectar-cta  border_radius_100px alignment_tablet_default alignment_phone_default display_tablet_inherit display_phone_inherit " data-color="accent-color" data-using-bg="true" data-style="text-reveal" data-display="inline" data-alignment="left" data-text-color="custom" style="margin-top: 10px;  --nectar-text-color: #F6F4F0; --nectar-button-color: var(--nectar-accent-color); --nectar-icon-gap: 20px; "><span style="color: #F6F4F0;" class="nectar-button-type"><span class="link_wrap" style="padding-top: 0.5em; padding-right: 1.4em; padding-bottom: 0.5em; padding-left: 1.4em;"><a class="link_text" role="button" href="/contact.html"><span class="text nectar-text-reveal-button__text" data-text="Contact us">Contact us</span></a></span></span></div>
 			</div> 
 		</div>
 	</div> 
@@ -1727,7 +1261,7 @@ Dynamic update of the estimated time of arrival (ETA), taking into account traff
 	<div class="vc_col-sm-6 vc_col-xs-6 wpb_column column_container vc_column_container col child_column no-extra-padding inherit_tablet inherit_phone flex_layout_desktop_column flex_justify_content_desktop_flex-start flex_align_items_desktop_flex-end flex_align_items_tablet_flex-start flex_wrap_desktop_nowrap flex_reverse_desktop_false flex_gap_desktop_10px " data-t-w-inherits="small_desktop" data-padding-pos="all" data-has-bg-color="false" data-bg-color="" data-bg-opacity="1" data-animation="" data-delay="0">
 		<div class="vc_column-inner">
 		<div class="wpb_wrapper">
-			<div class="nectar-cta  alignment_tablet_default alignment_phone_default display_tablet_inherit display_phone_inherit " data-color="default" data-using-bg="false" data-display="block" data-style="underline" data-alignment="left" data-text-color="std" style="--nectar-button-color: var(--nectar-default); --nectar-icon-gap: 10px; "><span class="nectar-button-type"> <span class="link_wrap"><a class="link_text" role="button" href="/">Changelog</a></span></span></div><div class="nectar-cta  alignment_tablet_default alignment_phone_default display_tablet_inherit display_phone_inherit " data-color="default" data-using-bg="false" data-display="block" data-style="underline" data-alignment="left" data-text-color="std" style="--nectar-button-color: var(--nectar-default); --nectar-icon-gap: 10px; "><span class="nectar-button-type"> <span class="link_wrap"><a class="link_text" role="button" href="/">Privacy Policy</a></span></span></div><div class="nectar-cta  alignment_tablet_default alignment_phone_default display_tablet_inherit display_phone_inherit " data-color="default" data-using-bg="false" data-display="block" data-style="underline" data-alignment="left" data-text-color="std" style="--nectar-button-color: var(--nectar-default); --nectar-icon-gap: 10px; "><span class="nectar-button-type"> <span class="link_wrap"><a class='link_text' href='/contact' role='button'>Contact</a></span></span></div>
+			<div class="nectar-cta  alignment_tablet_default alignment_phone_default display_tablet_inherit display_phone_inherit " data-color="default" data-using-bg="false" data-display="block" data-style="underline" data-alignment="left" data-text-color="std" style="--nectar-button-color: var(--nectar-default); --nectar-icon-gap: 10px; "><span class="nectar-button-type"> <span class="link_wrap"><a class="link_text" role="button" href="/">Changelog</a></span></span></div><div class="nectar-cta  alignment_tablet_default alignment_phone_default display_tablet_inherit display_phone_inherit " data-color="default" data-using-bg="false" data-display="block" data-style="underline" data-alignment="left" data-text-color="std" style="--nectar-button-color: var(--nectar-default); --nectar-icon-gap: 10px; "><span class="nectar-button-type"> <span class="link_wrap"><a class="link_text" role="button" href="/">Privacy Policy</a></span></span></div><div class="nectar-cta  alignment_tablet_default alignment_phone_default display_tablet_inherit display_phone_inherit " data-color="default" data-using-bg="false" data-display="block" data-style="underline" data-alignment="left" data-text-color="std" style="--nectar-button-color: var(--nectar-default); --nectar-icon-gap: 10px; "><span class="nectar-button-type"> <span class="link_wrap"><a class="link_text" role="button" href="/contact.html">Contact</a></span></span></div><div class="nectar-cta  alignment_tablet_default alignment_phone_default display_tablet_inherit display_phone_inherit " data-color="default" data-using-bg="false" data-display="block" data-style="underline" data-alignment="left" data-text-color="std" style="--nectar-button-color: var(--nectar-default); --nectar-icon-gap: 10px; "><span class="nectar-button-type"> <span class="link_wrap"><a class="link_text" role="button" href="/contact.html">Contact</a></span></span></div>
 		</div> 
 	</div>
 	</div> 
@@ -1848,6 +1382,16 @@ var nectar_front_i18n = {"menu":"Menu","next":"Next","previous":"Previous","clos
 <script data-pagespeed-no-defer="" data-nowprocket="" data-wpacu-skip="" data-no-optimize="" type="text/javascript" src="./Invenio Technologies – Invenio Technologies_files/nectar-delay-javascript.js" id="salient-delay-js-js"></script>
 <script></script>
 
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  document.querySelectorAll('a[href^="mailto:"], a[href$="contact.html"]').forEach(function(el) {
+    el.addEventListener('click', function(e) {
+      e.stopImmediatePropagation();
+      window.location.href = this.getAttribute('href');
+    }, true);
+  });
+});
+</script>
 <script>
 document.addEventListener("DOMContentLoaded", function() {
   document.querySelectorAll('a[href^="mailto:"], a[href$="contact.html"]').forEach(function(el) {
