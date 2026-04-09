@@ -1,0 +1,292 @@
+<svg viewBox="0 0 800 700" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    @keyframes pulse { 0%{r:4;opacity:1} 50%{r:8;opacity:0.3} 100%{r:4;opacity:1} }
+    @keyframes dashFlow { from{stroke-dashoffset:20} to{stroke-dashoffset:0} }
+    @keyframes fadeIn { from{opacity:0} to{opacity:1} }
+    @keyframes truck { 0%{transform:translate(0,0)} 100%{transform:translate(60px,0)} }
+    @keyframes ship { 0%{transform:translate(0,0)} 50%{transform:translate(30px,-5px)} 100%{transform:translate(60px,0)} }
+    @keyframes countUp { 0%{opacity:0.5} 50%{opacity:1} 100%{opacity:0.5} }
+    @keyframes scanPulse { 0%{stroke-opacity:0.8;r:12} 100%{stroke-opacity:0;r:24} }
+    @keyframes breathe { 0%{opacity:0.6} 50%{opacity:1} 100%{opacity:0.6} }
+    @keyframes dataStream { 0%{transform:translateY(0);opacity:1} 100%{transform:translateY(-20px);opacity:0} }
+    @keyframes rotate { from{transform:rotate(0deg)} to{transform:rotate(360deg)} }
+    @keyframes barPulse1 { 0%{width:120px} 50%{width:128px} 100%{width:120px} }
+    @keyframes barPulse2 { 0%{width:95px} 50%{width:102px} 100%{width:95px} }
+    @keyframes barPulse3 { 0%{width:140px} 50%{width:146px} 100%{width:140px} }
+    @keyframes alertBlink { 0%{opacity:1} 50%{opacity:0.2} 100%{opacity:1} }
+    .flow-line { stroke-dasharray: 8 6; animation: dashFlow 1s linear infinite; }
+    .fade { opacity:0; animation: fadeIn 0.6s ease forwards; }
+    .d1{animation-delay:0.1s} .d2{animation-delay:0.3s} .d3{animation-delay:0.5s}
+    .d4{animation-delay:0.7s} .d5{animation-delay:0.9s} .d6{animation-delay:1.1s}
+    .d7{animation-delay:1.3s} .d8{animation-delay:1.5s}
+    text { font-family: -apple-system, 'SF Pro Display', 'Inter', sans-serif; }
+    .mono { font-family: 'SF Mono', 'Fira Code', monospace; }
+  </style>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" style="stop-color:#0A0F1A"/>
+      <stop offset="100%" style="stop-color:#111827"/>
+    </linearGradient>
+    <linearGradient id="blueGlow" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" style="stop-color:#0891B2;stop-opacity:0"/>
+      <stop offset="50%" style="stop-color:#0891B2;stop-opacity:0.6"/>
+      <stop offset="100%" style="stop-color:#0891B2;stop-opacity:0"/>
+    </linearGradient>
+    <radialGradient id="nodeGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#22D3EE;stop-opacity:0.3"/>
+      <stop offset="100%" style="stop-color:#22D3EE;stop-opacity:0"/>
+    </radialGradient>
+    <filter id="glow"><feGaussianBlur stdDeviation="2" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="700" fill="url(#bg)" rx="12"/>
+
+  <!-- Subtle grid -->
+  <pattern id="g" width="40" height="40" patternUnits="userSpaceOnUse">
+    <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1E293B" stroke-width="0.3"/>
+  </pattern>
+  <rect width="800" height="700" fill="url(#g)" opacity="0.5"/>
+
+  <!-- ===== TOP: Mini KPI Bar ===== -->
+  <g class="fade d1">
+    <rect x="20" y="16" width="760" height="36" rx="8" fill="#1E293B" opacity="0.6"/>
+
+    <circle cx="42" cy="34" r="3" fill="#22C55E"><animate attributeName="opacity" values="1;0.4;1" dur="2s" repeatCount="indefinite"/></circle>
+    <text x="52" y="38" fill="#94A3B8" font-size="9" class="mono">LIVE</text>
+
+    <text x="120" y="38" fill="#64748B" font-size="8">POs</text>
+    <text x="145" y="38" fill="#22D3EE" font-size="10" font-weight="700" class="mono">847</text>
+
+    <text x="220" y="38" fill="#64748B" font-size="8">Shipments</text>
+    <text x="280" y="38" fill="#22D3EE" font-size="10" font-weight="700" class="mono">127</text>
+
+    <text x="350" y="38" fill="#64748B" font-size="8">In Transit</text>
+    <text x="410" y="38" fill="#F59E0B" font-size="10" font-weight="700" class="mono">7</text>
+    <text x="410" y="38" fill="#F59E0B" font-size="10" font-weight="700" class="mono"><animate attributeName="opacity" values="1;0.4;1" dur="3s" repeatCount="indefinite"/>7</text>
+
+    <text x="460" y="38" fill="#64748B" font-size="8">Delivered</text>
+    <text x="520" y="38" fill="#22C55E" font-size="10" font-weight="700" class="mono">46</text>
+
+    <text x="580" y="38" fill="#64748B" font-size="8">Install</text>
+    <text x="620" y="38" fill="#A78BFA" font-size="10" font-weight="700" class="mono">68%</text>
+
+    <text x="690" y="38" fill="#64748B" font-size="8">Value</text>
+    <text x="720" y="38" fill="#22D3EE" font-size="10" font-weight="700" class="mono">$4.98M</text>
+  </g>
+
+  <!-- ===== CENTER: Animated Map/Network ===== -->
+
+  <!-- Map outline (simplified US Gulf Coast) -->
+  <g class="fade d2" opacity="0.3">
+    <path d="M100,250 C150,240 200,235 280,240 C320,242 360,250 400,260 C440,270 480,265 520,255 C560,245 600,240 650,245 C700,250 720,260 740,270" fill="none" stroke="#334155" stroke-width="1.5"/>
+    <path d="M280,240 C290,260 300,280 310,300 C320,310 330,305 340,295 C350,285 360,275 370,270 C380,265 390,268 400,260" fill="none" stroke="#334155" stroke-width="1"/>
+  </g>
+
+  <!-- Location nodes -->
+  <!-- Houston -->
+  <g class="fade d3">
+    <circle cx="340" cy="290" r="20" fill="url(#nodeGlow)"/>
+    <circle cx="340" cy="290" r="6" fill="#0891B2" filter="url(#glow)"/>
+    <circle cx="340" cy="290" r="6" fill="none" stroke="#22D3EE" stroke-width="0.5"><animate attributeName="r" values="6;14;6" dur="3s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.6;0;0.6" dur="3s" repeatCount="indefinite"/></circle>
+    <text x="340" y="315" fill="#94A3B8" font-size="8" text-anchor="middle">HOUSTON, TX</text>
+    <text x="340" y="325" fill="#22D3EE" font-size="7" text-anchor="middle" class="mono">HQ + Yard</text>
+  </g>
+
+  <!-- Freeport -->
+  <g class="fade d4">
+    <circle cx="380" cy="340" r="16" fill="url(#nodeGlow)"/>
+    <circle cx="380" cy="340" r="5" fill="#22C55E" filter="url(#glow)"/>
+    <circle cx="380" cy="340" r="5" fill="none" stroke="#22C55E" stroke-width="0.5"><animate attributeName="r" values="5;12;5" dur="4s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.5;0;0.5" dur="4s" repeatCount="indefinite"/></circle>
+    <text x="380" y="362" fill="#94A3B8" font-size="8" text-anchor="middle">FREEPORT, TX</text>
+    <text x="380" y="372" fill="#22C55E" font-size="7" text-anchor="middle" class="mono">LNG Site</text>
+  </g>
+
+  <!-- Port Arthur -->
+  <g class="fade d4">
+    <circle cx="460" cy="280" r="14" fill="url(#nodeGlow)"/>
+    <circle cx="460" cy="280" r="4.5" fill="#A78BFA" filter="url(#glow)"/>
+    <text x="460" y="300" fill="#94A3B8" font-size="8" text-anchor="middle">PORT ARTHUR</text>
+    <text x="460" y="310" fill="#A78BFA" font-size="7" text-anchor="middle" class="mono">Fabrication</text>
+  </g>
+
+  <!-- New York -->
+  <g class="fade d5">
+    <circle cx="650" cy="200" r="14" fill="url(#nodeGlow)"/>
+    <circle cx="650" cy="200" r="4.5" fill="#F59E0B" filter="url(#glow)"/>
+    <text x="650" y="220" fill="#94A3B8" font-size="8" text-anchor="middle">GOULDS NY</text>
+    <text x="650" y="230" fill="#F59E0B" font-size="7" text-anchor="middle" class="mono">Vendor</text>
+  </g>
+
+  <!-- Bayonne -->
+  <g class="fade d5">
+    <circle cx="180" cy="260" r="14" fill="url(#nodeGlow)"/>
+    <circle cx="180" cy="260" r="4.5" fill="#0891B2" filter="url(#glow)"/>
+    <text x="180" y="280" fill="#94A3B8" font-size="8" text-anchor="middle">BAYONNE, NJ</text>
+    <text x="180" y="290" fill="#0891B2" font-size="7" text-anchor="middle" class="mono">Port</text>
+  </g>
+
+  <!-- Gonzales -->
+  <g class="fade d4">
+    <circle cx="260" cy="320" r="12" fill="url(#nodeGlow)"/>
+    <circle cx="260" cy="320" r="4" fill="#EF4444" filter="url(#glow)"/>
+    <circle cx="260" cy="320" r="4" fill="none" stroke="#EF4444" stroke-width="1"><animate attributeName="opacity" values="1;0.2;1" dur="1.5s" repeatCount="indefinite"/></circle>
+    <text x="260" y="340" fill="#94A3B8" font-size="8" text-anchor="middle">GONZALES, LA</text>
+    <text x="260" y="350" fill="#EF4444" font-size="7" text-anchor="middle" class="mono">Alert</text>
+  </g>
+
+  <!-- ===== Animated shipping routes ===== -->
+  <!-- NY to Houston -->
+  <path d="M640,200 C580,220 480,240 350,285" fill="none" stroke="#0891B2" stroke-width="1.2" class="flow-line fade d6"/>
+  <!-- Moving dot on route -->
+  <circle r="3" fill="#22D3EE" filter="url(#glow)">
+    <animateMotion path="M640,200 C580,220 480,240 350,285" dur="4s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- Houston to Freeport -->
+  <line x1="345" y1="296" x2="375" y2="335" stroke="#22C55E" stroke-width="1.2" class="flow-line fade d6"/>
+  <circle r="2.5" fill="#22C55E" filter="url(#glow)">
+    <animateMotion path="M345,296 L375,335" dur="2s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- Bayonne to Houston -->
+  <path d="M190,260 C250,250 290,260 335,285" fill="none" stroke="#0891B2" stroke-width="1" class="flow-line fade d7"/>
+  <circle r="2.5" fill="#22D3EE">
+    <animateMotion path="M190,260 C250,250 290,260 335,285" dur="5s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- Houston to Port Arthur -->
+  <line x1="350" y1="285" x2="452" y2="278" stroke="#A78BFA" stroke-width="1" class="flow-line fade d7"/>
+
+  <!-- Gonzales alert route -->
+  <path d="M265,318 C280,300 310,290 335,288" fill="none" stroke="#EF4444" stroke-width="1" stroke-dasharray="4 4" opacity="0.6" class="fade d7"/>
+
+  <!-- ===== BOTTOM LEFT: Shipment Feed ===== -->
+  <g class="fade d5">
+    <rect x="30" y="420" width="240" height="250" rx="8" fill="#1E293B" opacity="0.7" stroke="#334155" stroke-width="0.5"/>
+    <text x="45" y="442" fill="#E2E8F0" font-size="9" font-weight="700">Shipment Feed</text>
+    <circle cx="245" cy="436" r="3" fill="#22C55E"><animate attributeName="opacity" values="1;0.3;1" dur="1.5s" repeatCount="indefinite"/></circle>
+
+    <!-- Items that cycle -->
+    <g><animate attributeName="opacity" values="0;1;1;1;0" dur="10s" repeatCount="indefinite"/>
+      <circle cx="48" cy="465" r="3" fill="#22C55E"/><text x="58" y="468" fill="#94A3B8" font-size="7">PO-4521 Delivered</text><text x="255" y="468" fill="#475569" font-size="6" text-anchor="end">2m</text>
+      <line x1="45" y1="478" x2="255" y2="478" stroke="#1E293B" stroke-width="0.5"/>
+      <circle cx="48" cy="492" r="3" fill="#3B82F6"/><text x="58" y="495" fill="#94A3B8" font-size="7">SH-892 In Transit</text><text x="255" y="495" fill="#475569" font-size="6" text-anchor="end">15m</text>
+      <line x1="45" y1="505" x2="255" y2="505" stroke="#1E293B" stroke-width="0.5"/>
+      <circle cx="48" cy="519" r="3" fill="#F59E0B"/><text x="58" y="522" fill="#94A3B8" font-size="7">PO-4498 Exception</text><text x="255" y="522" fill="#F59E0B" font-size="6" text-anchor="end">1h</text>
+      <line x1="45" y1="532" x2="255" y2="532" stroke="#1E293B" stroke-width="0.5"/>
+      <circle cx="48" cy="546" r="3" fill="#8B5CF6"/><text x="58" y="549" fill="#94A3B8" font-size="7">Install Mechanical 80%</text><text x="255" y="549" fill="#475569" font-size="6" text-anchor="end">3h</text>
+      <line x1="45" y1="559" x2="255" y2="559" stroke="#1E293B" stroke-width="0.5"/>
+      <circle cx="48" cy="573" r="3" fill="#22C55E"/><text x="58" y="576" fill="#94A3B8" font-size="7">QR Scan: BOG Module</text><text x="255" y="576" fill="#475569" font-size="6" text-anchor="end">5h</text>
+      <line x1="45" y1="586" x2="255" y2="586" stroke="#1E293B" stroke-width="0.5"/>
+      <circle cx="48" cy="600" r="3" fill="#EF4444"/><text x="58" y="603" fill="#94A3B8" font-size="7">ALERT: Tracker #412 offline</text><text x="255" y="603" fill="#EF4444" font-size="6" text-anchor="end">4h</text>
+    </g>
+
+    <g><animate attributeName="opacity" values="0;0;0;0;0;1;1;1;1;0" dur="10s" repeatCount="indefinite" begin="5s"/>
+      <circle cx="48" cy="465" r="3" fill="#3B82F6"/><text x="58" y="468" fill="#94A3B8" font-size="7">PO-4533 Released</text><text x="255" y="468" fill="#475569" font-size="6" text-anchor="end">now</text>
+      <line x1="45" y1="478" x2="255" y2="478" stroke="#1E293B" stroke-width="0.5"/>
+      <circle cx="48" cy="492" r="3" fill="#22C55E"/><text x="58" y="495" fill="#94A3B8" font-size="7">PO-4519 Delivered</text><text x="255" y="495" fill="#475569" font-size="6" text-anchor="end">8m</text>
+      <line x1="45" y1="505" x2="255" y2="505" stroke="#1E293B" stroke-width="0.5"/>
+      <circle cx="48" cy="519" r="3" fill="#22C55E"/><text x="58" y="522" fill="#94A3B8" font-size="7">Civil Install 90%</text><text x="255" y="522" fill="#475569" font-size="6" text-anchor="end">6h</text>
+      <line x1="45" y1="532" x2="255" y2="532" stroke="#1E293B" stroke-width="0.5"/>
+      <circle cx="48" cy="546" r="3" fill="#F59E0B"/><text x="58" y="549" fill="#94A3B8" font-size="7">SH-901 Damaged</text><text x="255" y="549" fill="#F59E0B" font-size="6" text-anchor="end">8h</text>
+      <line x1="45" y1="559" x2="255" y2="559" stroke="#1E293B" stroke-width="0.5"/>
+      <circle cx="48" cy="573" r="3" fill="#A78BFA"/><text x="58" y="576" fill="#94A3B8" font-size="7">EWP-24 Approved</text><text x="255" y="576" fill="#475569" font-size="6" text-anchor="end">12h</text>
+      <line x1="45" y1="586" x2="255" y2="586" stroke="#1E293B" stroke-width="0.5"/>
+      <circle cx="48" cy="600" r="3" fill="#22C55E"/><text x="58" y="603" fill="#94A3B8" font-size="7">QR Scan: Pipe Rack</text><text x="255" y="603" fill="#475569" font-size="6" text-anchor="end">1d</text>
+    </g>
+  </g>
+
+  <!-- ===== BOTTOM CENTER: Installation Progress ===== -->
+  <g class="fade d6">
+    <rect x="290" y="420" width="220" height="250" rx="8" fill="#1E293B" opacity="0.7" stroke="#334155" stroke-width="0.5"/>
+    <text x="305" y="442" fill="#E2E8F0" font-size="9" font-weight="700">Installation</text>
+
+    <text x="305" y="466" fill="#64748B" font-size="7">Civil</text>
+    <rect x="355" y="458" width="140" height="6" rx="3" fill="#111827"/>
+    <rect x="355" y="458" rx="3" fill="#22C55E" height="6"><animate attributeName="width" values="120;128;120" dur="7s" repeatCount="indefinite"/></rect>
+    <text x="500" y="466" fill="#22C55E" font-size="7" class="mono">90%</text>
+
+    <text x="305" y="486" fill="#64748B" font-size="7">Electrical</text>
+    <rect x="355" y="478" width="140" height="6" rx="3" fill="#111827"/>
+    <rect x="355" y="478" rx="3" fill="#3B82F6" height="6"><animate attributeName="width" values="95;102;95" dur="6s" repeatCount="indefinite"/></rect>
+    <text x="500" y="486" fill="#3B82F6" font-size="7" class="mono">75%</text>
+
+    <text x="305" y="506" fill="#64748B" font-size="7">Instrument</text>
+    <rect x="355" y="498" width="140" height="6" rx="3" fill="#111827"/>
+    <rect x="355" y="498" rx="3" fill="#3B82F6" height="6"><animate attributeName="width" values="82;88;82" dur="8s" repeatCount="indefinite"/></rect>
+    <text x="500" y="506" fill="#3B82F6" font-size="7" class="mono">64%</text>
+
+    <text x="305" y="526" fill="#64748B" font-size="7">Mechanical</text>
+    <rect x="355" y="518" width="140" height="6" rx="3" fill="#111827"/>
+    <rect x="355" y="518" rx="3" fill="#22C55E" height="6"><animate attributeName="width" values="105;112;105" dur="5s" repeatCount="indefinite"/></rect>
+    <text x="500" y="526" fill="#22C55E" font-size="7" class="mono">80%</text>
+
+    <text x="305" y="546" fill="#64748B" font-size="7">Steel</text>
+    <rect x="355" y="538" width="140" height="6" rx="3" fill="#111827"/>
+    <rect x="355" y="538" rx="3" fill="#F59E0B" height="6"><animate attributeName="width" values="70;76;70" dur="9s" repeatCount="indefinite"/></rect>
+    <text x="500" y="546" fill="#F59E0B" font-size="7" class="mono">55%</text>
+
+    <!-- Overall ring -->
+    <circle cx="400" cy="610" r="30" fill="none" stroke="#111827" stroke-width="5"/>
+    <circle cx="400" cy="610" r="30" fill="none" stroke="#0891B2" stroke-width="5" stroke-dasharray="128" stroke-dashoffset="41" stroke-linecap="round" transform="rotate(-90 400 610)">
+      <animate attributeName="stroke-dashoffset" values="41;38;41" dur="6s" repeatCount="indefinite"/>
+    </circle>
+    <text x="400" y="607" fill="#22D3EE" font-size="14" font-weight="700" text-anchor="middle" class="mono">68%</text>
+    <text x="400" y="620" fill="#64748B" font-size="7" text-anchor="middle">Overall</text>
+  </g>
+
+  <!-- ===== BOTTOM RIGHT: Tracker Status ===== -->
+  <g class="fade d7">
+    <rect x="530" y="420" width="240" height="250" rx="8" fill="#1E293B" opacity="0.7" stroke="#334155" stroke-width="0.5"/>
+    <text x="545" y="442" fill="#E2E8F0" font-size="9" font-weight="700">GPS Trackers</text>
+
+    <text x="545" y="466" fill="#64748B" font-size="7">Active</text>
+    <text x="750" y="466" fill="#22C55E" font-size="10" font-weight="700" text-anchor="end" class="mono">40</text>
+
+    <text x="545" y="486" fill="#64748B" font-size="7">Reporting</text>
+    <text x="750" y="486" fill="#22D3EE" font-size="10" font-weight="700" text-anchor="end" class="mono">19</text>
+
+    <text x="545" y="506" fill="#64748B" font-size="7">Offline</text>
+    <text x="750" y="506" fill="#EF4444" font-size="10" font-weight="700" text-anchor="end" class="mono"><animate attributeName="opacity" values="1;0.3;1" dur="2s" repeatCount="indefinite"/>0</text>
+
+    <line x1="545" y1="518" x2="755" y2="518" stroke="#334155" stroke-width="0.5"/>
+    <text x="545" y="536" fill="#E2E8F0" font-size="8" font-weight="600">Recent Scans</text>
+
+    <g>
+      <rect x="545" y="546" width="210" height="28" rx="4" fill="#111827" stroke="#334155" stroke-width="0.5"/>
+      <circle cx="560" cy="560" r="3" fill="#22C55E"/>
+      <text x="570" y="557" fill="#94A3B8" font-size="6.5">BOG Compressor Module</text>
+      <text x="570" y="567" fill="#475569" font-size="5.5">Scanned at Laydown Yard A</text>
+      <text x="748" y="562" fill="#475569" font-size="6" text-anchor="end">2m ago</text>
+    </g>
+
+    <g>
+      <rect x="545" y="580" width="210" height="28" rx="4" fill="#111827" stroke="#334155" stroke-width="0.5"/>
+      <circle cx="560" cy="594" r="3" fill="#3B82F6"/>
+      <text x="570" y="591" fill="#94A3B8" font-size="6.5">MCC Crates x4</text>
+      <text x="570" y="601" fill="#475569" font-size="5.5">In transit → Freeport</text>
+      <text x="748" y="596" fill="#475569" font-size="6" text-anchor="end">15m ago</text>
+    </g>
+
+    <g>
+      <rect x="545" y="614" width="210" height="28" rx="4" fill="#111827" stroke="#334155" stroke-width="0.5"/>
+      <circle cx="560" cy="628" r="3" fill="#F59E0B"/>
+      <text x="570" y="625" fill="#94A3B8" font-size="6.5">Pipe Rack Steel #8</text>
+      <text x="570" y="635" fill="#475569" font-size="5.5">Awaiting inspection</text>
+      <text x="748" y="630" fill="#F59E0B" font-size="6" text-anchor="end">1h ago</text>
+    </g>
+
+    <g>
+      <rect x="545" y="648" width="210" height="14" rx="4" fill="transparent"/>
+      <text x="650" y="660" fill="#0891B2" font-size="7" text-anchor="middle"><animate attributeName="opacity" values="0.5;1;0.5" dur="2s" repeatCount="indefinite"/>View all trackers →</text>
+    </g>
+  </g>
+
+  <!-- ===== Decorative: floating data particles ===== -->
+  <circle cx="500" cy="180" r="1.5" fill="#22D3EE" opacity="0.4"><animate attributeName="cy" values="180;160;180" dur="6s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.4;0.8;0.4" dur="6s" repeatCount="indefinite"/></circle>
+  <circle cx="560" cy="200" r="1" fill="#A78BFA" opacity="0.3"><animate attributeName="cy" values="200;185;200" dur="5s" repeatCount="indefinite"/></circle>
+  <circle cx="420" cy="210" r="1.5" fill="#22C55E" opacity="0.3"><animate attributeName="cy" values="210;195;210" dur="7s" repeatCount="indefinite"/></circle>
+  <circle cx="300" cy="230" r="1" fill="#F59E0B" opacity="0.3"><animate attributeName="cy" values="230;220;230" dur="4s" repeatCount="indefinite"/></circle>
+  <circle cx="600" cy="170" r="1" fill="#0891B2" opacity="0.4"><animate attributeName="cy" values="170;158;170" dur="8s" repeatCount="indefinite"/></circle>
+</svg>
