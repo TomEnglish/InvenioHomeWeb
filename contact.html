@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+<title>Contact Us – Invenio Technologies</title>
+<link rel="stylesheet" href="./Invenio Technologies – Invenio Technologies_files/grid-system.css" type="text/css">
+<link rel="stylesheet" href="./Invenio Technologies – Invenio Technologies_files/style.css" type="text/css">
+<link rel="stylesheet" href="./Invenio Technologies – Invenio Technologies_files/skin-material.css" type="text/css">
+<link rel="stylesheet" href="./Invenio Technologies – Invenio Technologies_files/responsive.css" type="text/css">
+<link rel="stylesheet" href="./Invenio Technologies – Invenio Technologies_files/salient-dynamic-styles.css" type="text/css">
+<link rel="stylesheet" href="./Invenio Technologies – Invenio Technologies_files/fonts.css" type="text/css">
+<link rel="stylesheet" href="./Invenio Technologies – Invenio Technologies_files/nectar-brands.css" type="text/css">
+<style>
+  body {
+    font-family: 'Manrope', sans-serif;
+    background-color: #f3f3f3;
+    color: #161514;
+    margin: 0;
+    padding: 0;
+  }
+  .contact-wrap {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 80px 24px;
+  }
+  .contact-wrap h1 {
+    font-family: 'Instrument Serif', serif;
+    font-weight: 400;
+    font-size: 48px;
+    margin-bottom: 16px;
+  }
+  .contact-wrap p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 32px;
+  }
+  .contact-wrap a.back-link {
+    display: inline-block;
+    margin-bottom: 40px;
+    color: #161514;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .contact-wrap a.back-link:hover {
+    opacity: 0.7;
+  }
+  .contact-form label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .contact-form input,
+  .contact-form textarea {
+    width: 100%;
+    padding: 14px 16px;
+    margin-bottom: 24px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    font-family: 'Manrope', sans-serif;
+    font-size: 16px;
+    background: #fff;
+    box-sizing: border-box;
+    transition: border-color 0.2s;
+  }
+  .contact-form input:focus,
+  .contact-form textarea:focus {
+    outline: none;
+    border-color: #161514;
+  }
+  .contact-form textarea {
+    height: 160px;
+    resize: vertical;
+  }
+  .contact-form button {
+    background: #161514;
+    color: #fff;
+    border: none;
+    padding: 16px 40px;
+    border-radius: 10px;
+    font-family: 'Manrope', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.2s;
+  }
+  .contact-form button:hover {
+    opacity: 0.85;
+  }
+  .contact-info {
+    margin-top: 48px;
+    padding-top: 32px;
+    border-top: 1px solid #ddd;
+  }
+  .contact-info p {
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+  .contact-info a {
+    color: #161514;
+    text-decoration: underline;
+  }
+</style>
+</head>
+<body>
+<div class="contact-wrap">
+  <a href="/" class="back-link">&larr; Back to Home</a>
+  <h1>Contact Us</h1>
+  <p>Have a question about Invenio Technologies? Reach out and we'll get back to you.</p>
+
+  <form class="contact-form" action="mailto:jmolina@invenio-tech.com" method="POST" enctype="text/plain">
+    <label for="name">Name</label>
+    <input type="text" id="name" name="Name" required>
+
+    <label for="email">Email</label>
+    <input type="email" id="email" name="Email" required>
+
+    <label for="company">Company</label>
+    <input type="text" id="company" name="Company">
+
+    <label for="message">Message</label>
+    <textarea id="message" name="Message" required></textarea>
+
+    <button type="submit">Send Message</button>
+  </form>
+
+  <div class="contact-info">
+    <p>Or email us directly at <a href="mailto:jmolina@invenio-tech.com">jmolina@invenio-tech.com</a></p>
+  </div>
+</div>
+</body>
+</html>
