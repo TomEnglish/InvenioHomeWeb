@@ -1,198 +1,216 @@
 <svg viewBox="0 0 900 520" xmlns="http://www.w3.org/2000/svg">
   <style>
     @keyframes fadeIn { from{opacity:0} to{opacity:1} }
-    @keyframes dropBar { from{height:0;y:400} to{} }
-    @keyframes shrinkBar { 0%{opacity:1} 50%{opacity:0.6} 100%{opacity:1} }
-    @keyframes slashIn { from{clip-path:inset(0 100% 0 0)} to{clip-path:inset(0 0 0 0)} }
-    @keyframes countDown { 0%{opacity:0.5} 50%{opacity:1} 100%{opacity:0.5} }
-    @keyframes savingsPop { from{transform:scale(0.8);opacity:0} to{transform:scale(1);opacity:1} }
-    @keyframes checkMark { from{stroke-dashoffset:20} to{stroke-dashoffset:0} }
+    @keyframes glowPulse { 0%{opacity:0.15} 50%{opacity:0.35} 100%{opacity:0.15} }
+    @keyframes slashDraw { from{stroke-dashoffset:300} to{stroke-dashoffset:0} }
+    @keyframes scanDown { 0%{transform:translateY(-400px)} 100%{transform:translateY(400px)} }
+    @keyframes totalGlow { 0%{filter:drop-shadow(0 0 4px rgba(34,211,238,0))} 50%{filter:drop-shadow(0 0 12px rgba(34,211,238,0.4))} 100%{filter:drop-shadow(0 0 4px rgba(34,211,238,0))} }
     .fade { opacity:0; animation: fadeIn 0.5s ease forwards; }
-    .d1{animation-delay:0.2s} .d2{animation-delay:0.4s} .d3{animation-delay:0.6s}
-    .d4{animation-delay:0.8s} .d5{animation-delay:1.0s} .d6{animation-delay:1.2s}
-    .d7{animation-delay:1.4s} .d8{animation-delay:1.6s} .d9{animation-delay:1.8s}
-    .d10{animation-delay:2.0s} .d11{animation-delay:2.2s}
-    text { font-family: -apple-system, 'SF Pro Display', 'Inter', sans-serif; }
-    .mono { font-family: 'SF Mono', 'Fira Code', monospace; }
+    .d1{animation-delay:0.2s} .d2{animation-delay:0.5s} .d3{animation-delay:0.8s}
+    .d4{animation-delay:1.1s} .d5{animation-delay:1.4s} .d6{animation-delay:1.7s}
+    .d7{animation-delay:2.0s} .d8{animation-delay:2.3s}
+    text { font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace; }
   </style>
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" style="stop-color:#0A0F1A"/>
-      <stop offset="100%" style="stop-color:#111827"/>
+      <stop offset="0%" style="stop-color:#060B14"/>
+      <stop offset="100%" style="stop-color:#0C1220"/>
     </linearGradient>
-    <pattern id="g" width="40" height="40" patternUnits="userSpaceOnUse">
-      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1E293B" stroke-width="0.3"/>
+    <linearGradient id="redBar" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" style="stop-color:#EF4444;stop-opacity:0.4"/>
+      <stop offset="100%" style="stop-color:#EF4444;stop-opacity:0.08"/>
+    </linearGradient>
+    <linearGradient id="amberBar" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" style="stop-color:#F59E0B;stop-opacity:0.35"/>
+      <stop offset="100%" style="stop-color:#F59E0B;stop-opacity:0.06"/>
+    </linearGradient>
+    <linearGradient id="greenGlow" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" style="stop-color:#22C55E;stop-opacity:0"/>
+      <stop offset="50%" style="stop-color:#22C55E;stop-opacity:0.5"/>
+      <stop offset="100%" style="stop-color:#22C55E;stop-opacity:0"/>
+    </linearGradient>
+    <linearGradient id="savingsGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" style="stop-color:#0891B2;stop-opacity:0.15"/>
+      <stop offset="100%" style="stop-color:#22C55E;stop-opacity:0.15"/>
+    </linearGradient>
+    <filter id="glow"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse">
+      <circle cx="10" cy="10" r="0.5" fill="#1E293B"/>
     </pattern>
   </defs>
 
   <rect width="900" height="520" fill="url(#bg)" rx="12"/>
-  <rect width="900" height="520" fill="url(#g)" opacity="0.4"/>
+  <rect width="900" height="520" fill="url(#dots)" opacity="0.6"/>
 
-  <!-- Title -->
+  <!-- Ambient scan line -->
+  <rect x="0" y="0" width="900" height="2" fill="url(#greenGlow)" opacity="0.3">
+    <animateTransform attributeName="transform" type="translate" values="0,-10;0,530;0,-10" dur="8s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- Title block -->
   <g class="fade d1">
-    <text x="450" y="36" fill="#E2E8F0" font-size="13" text-anchor="middle" font-weight="700">WHERE PROJECTS BLEED MONEY</text>
-    <text x="450" y="52" fill="#64748B" font-size="8" text-anchor="middle">Typical capital project waste — and what Invenio eliminates</text>
+    <rect x="30" y="16" width="840" height="40" rx="6" fill="#0F172A" stroke="#1E293B" stroke-width="0.5"/>
+    <circle cx="50" cy="36" r="4" fill="#EF4444" opacity="0.8"><animate attributeName="opacity" values="0.8;0.3;0.8" dur="3s" repeatCount="indefinite"/></circle>
+    <text x="62" y="40" fill="#EF4444" font-size="7" font-weight="600">WASTE ANALYSIS</text>
+    <text x="450" y="40" fill="#94A3B8" font-size="10" text-anchor="middle" font-weight="600" letter-spacing="3">WHERE CAPITAL PROJECTS BLEED</text>
+    <circle cx="830" cy="36" r="4" fill="#22C55E"><animate attributeName="opacity" values="1;0.4;1" dur="2s" repeatCount="indefinite"/></circle>
+    <text x="818" y="40" fill="#64748B" font-size="7" text-anchor="end">LIVE</text>
   </g>
 
   <!-- Y-axis -->
-  <g class="fade d2">
-    <line x1="80" y1="75" x2="80" y2="400" stroke="#334155" stroke-width="0.5"/>
-    <text x="70" y="80" fill="#64748B" font-size="7" text-anchor="end" class="mono">$2.5M</text>
-    <line x1="75" y1="80" x2="80" y2="80" stroke="#334155" stroke-width="0.5"/>
-    <text x="70" y="145" fill="#64748B" font-size="7" text-anchor="end" class="mono">$2.0M</text>
-    <line x1="75" y1="145" x2="80" y2="145" stroke="#334155" stroke-width="0.5"/>
-    <text x="70" y="210" fill="#64748B" font-size="7" text-anchor="end" class="mono">$1.5M</text>
-    <line x1="75" y1="210" x2="80" y2="210" stroke="#334155" stroke-width="0.5"/>
-    <text x="70" y="275" fill="#64748B" font-size="7" text-anchor="end" class="mono">$1.0M</text>
-    <line x1="75" y1="275" x2="80" y2="275" stroke="#334155" stroke-width="0.5"/>
-    <text x="70" y="340" fill="#64748B" font-size="7" text-anchor="end" class="mono">$0.5M</text>
-    <line x1="75" y1="340" x2="80" y2="340" stroke="#334155" stroke-width="0.5"/>
-    <text x="70" y="403" fill="#64748B" font-size="7" text-anchor="end" class="mono">$0</text>
-    <line x1="80" y1="400" x2="820" y2="400" stroke="#334155" stroke-width="0.5"/>
-    <!-- Grid lines -->
-    <line x1="80" y1="145" x2="820" y2="145" stroke="#1E293B" stroke-width="0.3"/>
-    <line x1="80" y1="210" x2="820" y2="210" stroke="#1E293B" stroke-width="0.3"/>
-    <line x1="80" y1="275" x2="820" y2="275" stroke="#1E293B" stroke-width="0.3"/>
-    <line x1="80" y1="340" x2="820" y2="340" stroke="#1E293B" stroke-width="0.3"/>
+  <g class="fade d2" opacity="0.6">
+    <line x1="88" y1="75" x2="88" y2="390" stroke="#1E293B" stroke-width="0.8"/>
+    <text x="78" y="82" fill="#475569" font-size="6" text-anchor="end">$2.5M</text>
+    <text x="78" y="144" fill="#475569" font-size="6" text-anchor="end">$2.0M</text>
+    <text x="78" y="206" fill="#475569" font-size="6" text-anchor="end">$1.5M</text>
+    <text x="78" y="268" fill="#475569" font-size="6" text-anchor="end">$1.0M</text>
+    <text x="78" y="330" fill="#475569" font-size="6" text-anchor="end">$0.5M</text>
+    <text x="78" y="393" fill="#475569" font-size="6" text-anchor="end">$0</text>
+    <line x1="88" y1="390" x2="830" y2="390" stroke="#1E293B" stroke-width="0.5"/>
+    <line x1="88" y1="80" x2="830" y2="80" stroke="#0F172A" stroke-width="0.3" stroke-dasharray="4,8"/>
+    <line x1="88" y1="142" x2="830" y2="142" stroke="#0F172A" stroke-width="0.3" stroke-dasharray="4,8"/>
+    <line x1="88" y1="204" x2="830" y2="204" stroke="#0F172A" stroke-width="0.3" stroke-dasharray="4,8"/>
+    <line x1="88" y1="266" x2="830" y2="266" stroke="#0F172A" stroke-width="0.3" stroke-dasharray="4,8"/>
+    <line x1="88" y1="328" x2="830" y2="328" stroke="#0F172A" stroke-width="0.3" stroke-dasharray="4,8"/>
   </g>
 
-  <!-- ===== WASTE BARS (red/orange, showing the cost) ===== -->
-
-  <!-- Bar 1: Emergency Expediting - $2.1M -->
+  <!-- BAR 1: Emergency Expediting $2.1M -->
   <g class="fade d3">
-    <rect x="110" y="93" width="90" height="307" rx="4" fill="#EF4444" opacity="0.25"/>
-    <rect x="110" y="93" width="90" height="307" rx="4" fill="none" stroke="#EF4444" stroke-width="1" opacity="0.6"/>
-    <rect x="110" y="93" width="90" height="307" rx="4" fill="#EF4444" opacity="0.15">
-      <animate attributeName="opacity" values="0.15;0.25;0.15" dur="4s" repeatCount="indefinite"/>
-    </rect>
-    <text x="155" y="88" fill="#EF4444" font-size="10" text-anchor="middle" font-weight="700" class="mono">$2.1M</text>
-    <text x="155" y="418" fill="#94A3B8" font-size="7" text-anchor="middle">Emergency</text>
-    <text x="155" y="428" fill="#94A3B8" font-size="7" text-anchor="middle">Expediting</text>
-    <!-- Slash through showing reduction -->
-    <line x1="108" y1="390" x2="202" y2="100" stroke="#22C55E" stroke-width="2" opacity="0.8" stroke-dasharray="200" stroke-dashoffset="200">
-      <animate attributeName="stroke-dashoffset" from="200" to="0" dur="1.5s" fill="freeze" begin="2s"/>
+    <rect x="115" y="90" width="85" height="300" rx="3" fill="url(#redBar)"/>
+    <rect x="115" y="90" width="85" height="300" rx="3" fill="none" stroke="#EF4444" stroke-width="0.6" opacity="0.5"/>
+    <rect x="115" y="90" width="85" height="300" rx="3" fill="#EF4444" opacity="0.05"><animate attributeName="opacity" values="0.05;0.15;0.05" dur="4s" repeatCount="indefinite"/></rect>
+    <rect x="125" y="96" width="65" height="18" rx="3" fill="#0F172A" stroke="#EF4444" stroke-width="0.4" opacity="0.9"/>
+    <text x="157" y="109" fill="#EF4444" font-size="9" text-anchor="middle" font-weight="700">$2.1M</text>
+    <text x="157" y="408" fill="#94A3B8" font-size="7" text-anchor="middle">Emergency</text>
+    <text x="157" y="419" fill="#64748B" font-size="6" text-anchor="middle">Expediting</text>
+    <line x1="113" y1="385" x2="202" y2="95" stroke="#22C55E" stroke-width="1.5" opacity="0" filter="url(#glow)" stroke-dasharray="300" stroke-dashoffset="300">
+      <animate attributeName="stroke-dashoffset" from="300" to="0" dur="1s" fill="freeze" begin="2.5s"/>
+      <animate attributeName="opacity" from="0" to="0.9" dur="0.3s" fill="freeze" begin="2.5s"/>
     </line>
-    <text x="155" y="250" fill="#22C55E" font-size="9" text-anchor="middle" font-weight="700" opacity="0">
-      <animate attributeName="opacity" from="0" to="1" dur="0.5s" fill="freeze" begin="3s"/>-85%
-    </text>
+    <g opacity="0"><animate attributeName="opacity" from="0" to="1" dur="0.4s" fill="freeze" begin="3.2s"/>
+      <rect x="130" y="230" width="54" height="20" rx="10" fill="#052E16" stroke="#22C55E" stroke-width="0.5"/>
+      <text x="157" y="244" fill="#22C55E" font-size="9" text-anchor="middle" font-weight="700">-85%</text>
+    </g>
   </g>
 
-  <!-- Bar 2: Rework & Rejection - $1.8M -->
+  <!-- BAR 2: Rework $1.8M -->
   <g class="fade d4">
-    <rect x="230" y="132" width="90" height="268" rx="4" fill="#F59E0B" opacity="0.25"/>
-    <rect x="230" y="132" width="90" height="268" rx="4" fill="none" stroke="#F59E0B" stroke-width="1" opacity="0.6"/>
-    <rect x="230" y="132" width="90" height="268" rx="4" fill="#F59E0B" opacity="0.15">
-      <animate attributeName="opacity" values="0.15;0.25;0.15" dur="5s" repeatCount="indefinite"/>
-    </rect>
-    <text x="275" y="127" fill="#F59E0B" font-size="10" text-anchor="middle" font-weight="700" class="mono">$1.8M</text>
-    <text x="275" y="418" fill="#94A3B8" font-size="7" text-anchor="middle">Rework &</text>
-    <text x="275" y="428" fill="#94A3B8" font-size="7" text-anchor="middle">Rejection</text>
-    <line x1="228" y1="390" x2="322" y2="140" stroke="#22C55E" stroke-width="2" opacity="0.8" stroke-dasharray="200" stroke-dashoffset="200">
-      <animate attributeName="stroke-dashoffset" from="200" to="0" dur="1.5s" fill="freeze" begin="2.3s"/>
+    <rect x="235" y="128" width="85" height="262" rx="3" fill="url(#amberBar)"/>
+    <rect x="235" y="128" width="85" height="262" rx="3" fill="none" stroke="#F59E0B" stroke-width="0.6" opacity="0.5"/>
+    <rect x="235" y="128" width="85" height="262" rx="3" fill="#F59E0B" opacity="0.05"><animate attributeName="opacity" values="0.05;0.12;0.05" dur="5s" repeatCount="indefinite"/></rect>
+    <rect x="245" y="134" width="65" height="18" rx="3" fill="#0F172A" stroke="#F59E0B" stroke-width="0.4" opacity="0.9"/>
+    <text x="277" y="147" fill="#F59E0B" font-size="9" text-anchor="middle" font-weight="700">$1.8M</text>
+    <text x="277" y="408" fill="#94A3B8" font-size="7" text-anchor="middle">Rework &amp;</text>
+    <text x="277" y="419" fill="#64748B" font-size="6" text-anchor="middle">Rejection</text>
+    <line x1="233" y1="385" x2="322" y2="133" stroke="#22C55E" stroke-width="1.5" opacity="0" filter="url(#glow)" stroke-dasharray="300" stroke-dashoffset="300">
+      <animate attributeName="stroke-dashoffset" from="300" to="0" dur="1s" fill="freeze" begin="2.8s"/>
+      <animate attributeName="opacity" from="0" to="0.9" dur="0.3s" fill="freeze" begin="2.8s"/>
     </line>
-    <text x="275" y="260" fill="#22C55E" font-size="9" text-anchor="middle" font-weight="700" opacity="0">
-      <animate attributeName="opacity" from="0" to="1" dur="0.5s" fill="freeze" begin="3.3s"/>-60%
-    </text>
+    <g opacity="0"><animate attributeName="opacity" from="0" to="1" dur="0.4s" fill="freeze" begin="3.5s"/>
+      <rect x="250" y="250" width="54" height="20" rx="10" fill="#052E16" stroke="#22C55E" stroke-width="0.5"/>
+      <text x="277" y="264" fill="#22C55E" font-size="9" text-anchor="middle" font-weight="700">-60%</text>
+    </g>
   </g>
 
-  <!-- Bar 3: Double Orders - $1.4M -->
+  <!-- BAR 3: Double Orders $1.4M -->
   <g class="fade d5">
-    <rect x="350" y="184" width="90" height="216" rx="4" fill="#EF4444" opacity="0.25"/>
-    <rect x="350" y="184" width="90" height="216" rx="4" fill="none" stroke="#EF4444" stroke-width="1" opacity="0.6"/>
-    <rect x="350" y="184" width="90" height="216" rx="4" fill="#EF4444" opacity="0.15">
-      <animate attributeName="opacity" values="0.15;0.25;0.15" dur="6s" repeatCount="indefinite"/>
-    </rect>
-    <text x="395" y="179" fill="#EF4444" font-size="10" text-anchor="middle" font-weight="700" class="mono">$1.4M</text>
-    <text x="395" y="418" fill="#94A3B8" font-size="7" text-anchor="middle">Double</text>
-    <text x="395" y="428" fill="#94A3B8" font-size="7" text-anchor="middle">Orders</text>
-    <line x1="348" y1="390" x2="442" y2="190" stroke="#22C55E" stroke-width="2" opacity="0.8" stroke-dasharray="200" stroke-dashoffset="200">
-      <animate attributeName="stroke-dashoffset" from="200" to="0" dur="1.5s" fill="freeze" begin="2.6s"/>
+    <rect x="355" y="178" width="85" height="212" rx="3" fill="url(#redBar)"/>
+    <rect x="355" y="178" width="85" height="212" rx="3" fill="none" stroke="#EF4444" stroke-width="0.6" opacity="0.5"/>
+    <rect x="355" y="178" width="85" height="212" rx="3" fill="#EF4444" opacity="0.05"><animate attributeName="opacity" values="0.05;0.15;0.05" dur="6s" repeatCount="indefinite"/></rect>
+    <rect x="365" y="184" width="65" height="18" rx="3" fill="#0F172A" stroke="#EF4444" stroke-width="0.4" opacity="0.9"/>
+    <text x="397" y="197" fill="#EF4444" font-size="9" text-anchor="middle" font-weight="700">$1.4M</text>
+    <text x="397" y="408" fill="#94A3B8" font-size="7" text-anchor="middle">Double</text>
+    <text x="397" y="419" fill="#64748B" font-size="6" text-anchor="middle">Orders</text>
+    <line x1="353" y1="385" x2="442" y2="183" stroke="#22C55E" stroke-width="1.5" opacity="0" filter="url(#glow)" stroke-dasharray="300" stroke-dashoffset="300">
+      <animate attributeName="stroke-dashoffset" from="300" to="0" dur="1s" fill="freeze" begin="3.1s"/>
+      <animate attributeName="opacity" from="0" to="0.9" dur="0.3s" fill="freeze" begin="3.1s"/>
     </line>
-    <text x="395" y="290" fill="#22C55E" font-size="9" text-anchor="middle" font-weight="700" opacity="0">
-      <animate attributeName="opacity" from="0" to="1" dur="0.5s" fill="freeze" begin="3.6s"/>-90%
-    </text>
+    <g opacity="0"><animate attributeName="opacity" from="0" to="1" dur="0.4s" fill="freeze" begin="3.8s"/>
+      <rect x="370" y="280" width="54" height="20" rx="10" fill="#052E16" stroke="#22C55E" stroke-width="0.5"/>
+      <text x="397" y="294" fill="#22C55E" font-size="9" text-anchor="middle" font-weight="700">-90%</text>
+    </g>
   </g>
 
-  <!-- Bar 4: Storage & Insurance - $0.9M -->
+  <!-- BAR 4: Storage $0.9M -->
   <g class="fade d6">
-    <rect x="470" y="283" width="90" height="117" rx="4" fill="#F59E0B" opacity="0.25"/>
-    <rect x="470" y="283" width="90" height="117" rx="4" fill="none" stroke="#F59E0B" stroke-width="1" opacity="0.6"/>
-    <rect x="470" y="283" width="90" height="117" rx="4" fill="#F59E0B" opacity="0.15">
-      <animate attributeName="opacity" values="0.15;0.25;0.15" dur="4.5s" repeatCount="indefinite"/>
-    </rect>
-    <text x="515" y="278" fill="#F59E0B" font-size="10" text-anchor="middle" font-weight="700" class="mono">$0.9M</text>
-    <text x="515" y="418" fill="#94A3B8" font-size="7" text-anchor="middle">Storage &</text>
-    <text x="515" y="428" fill="#94A3B8" font-size="7" text-anchor="middle">Insurance</text>
-    <line x1="468" y1="390" x2="562" y2="290" stroke="#22C55E" stroke-width="2" opacity="0.8" stroke-dasharray="200" stroke-dashoffset="200">
-      <animate attributeName="stroke-dashoffset" from="200" to="0" dur="1.5s" fill="freeze" begin="2.9s"/>
+    <rect x="475" y="276" width="85" height="114" rx="3" fill="url(#amberBar)"/>
+    <rect x="475" y="276" width="85" height="114" rx="3" fill="none" stroke="#F59E0B" stroke-width="0.6" opacity="0.5"/>
+    <rect x="475" y="276" width="85" height="114" rx="3" fill="#F59E0B" opacity="0.05"><animate attributeName="opacity" values="0.05;0.12;0.05" dur="4.5s" repeatCount="indefinite"/></rect>
+    <rect x="485" y="282" width="65" height="18" rx="3" fill="#0F172A" stroke="#F59E0B" stroke-width="0.4" opacity="0.9"/>
+    <text x="517" y="295" fill="#F59E0B" font-size="9" text-anchor="middle" font-weight="700">$0.9M</text>
+    <text x="517" y="408" fill="#94A3B8" font-size="7" text-anchor="middle">Storage &amp;</text>
+    <text x="517" y="419" fill="#64748B" font-size="6" text-anchor="middle">Insurance</text>
+    <line x1="473" y1="385" x2="562" y2="281" stroke="#22C55E" stroke-width="1.5" opacity="0" filter="url(#glow)" stroke-dasharray="300" stroke-dashoffset="300">
+      <animate attributeName="stroke-dashoffset" from="300" to="0" dur="1s" fill="freeze" begin="3.4s"/>
+      <animate attributeName="opacity" from="0" to="0.9" dur="0.3s" fill="freeze" begin="3.4s"/>
     </line>
-    <text x="515" y="340" fill="#22C55E" font-size="9" text-anchor="middle" font-weight="700" opacity="0">
-      <animate attributeName="opacity" from="0" to="1" dur="0.5s" fill="freeze" begin="3.9s"/>-45%
-    </text>
+    <g opacity="0"><animate attributeName="opacity" from="0" to="1" dur="0.4s" fill="freeze" begin="4.1s"/>
+      <rect x="490" y="330" width="54" height="20" rx="10" fill="#052E16" stroke="#22C55E" stroke-width="0.5"/>
+      <text x="517" y="344" fill="#22C55E" font-size="9" text-anchor="middle" font-weight="700">-45%</text>
+    </g>
   </g>
 
-  <!-- Bar 5: Shrinkage & Loss - $0.7M -->
+  <!-- BAR 5: Shrinkage $0.7M -->
   <g class="fade d7">
-    <rect x="590" y="309" width="90" height="91" rx="4" fill="#EF4444" opacity="0.25"/>
-    <rect x="590" y="309" width="90" height="91" rx="4" fill="none" stroke="#EF4444" stroke-width="1" opacity="0.6"/>
-    <rect x="590" y="309" width="90" height="91" rx="4" fill="#EF4444" opacity="0.15">
-      <animate attributeName="opacity" values="0.15;0.25;0.15" dur="5.5s" repeatCount="indefinite"/>
-    </rect>
-    <text x="635" y="304" fill="#EF4444" font-size="10" text-anchor="middle" font-weight="700" class="mono">$0.7M</text>
-    <text x="635" y="418" fill="#94A3B8" font-size="7" text-anchor="middle">Shrinkage</text>
-    <text x="635" y="428" fill="#94A3B8" font-size="7" text-anchor="middle">& Loss</text>
-    <line x1="588" y1="390" x2="682" y2="315" stroke="#22C55E" stroke-width="2" opacity="0.8" stroke-dasharray="200" stroke-dashoffset="200">
-      <animate attributeName="stroke-dashoffset" from="200" to="0" dur="1.5s" fill="freeze" begin="3.2s"/>
+    <rect x="595" y="303" width="85" height="87" rx="3" fill="url(#redBar)"/>
+    <rect x="595" y="303" width="85" height="87" rx="3" fill="none" stroke="#EF4444" stroke-width="0.6" opacity="0.5"/>
+    <rect x="595" y="303" width="85" height="87" rx="3" fill="#EF4444" opacity="0.05"><animate attributeName="opacity" values="0.05;0.15;0.05" dur="5.5s" repeatCount="indefinite"/></rect>
+    <rect x="605" y="309" width="65" height="18" rx="3" fill="#0F172A" stroke="#EF4444" stroke-width="0.4" opacity="0.9"/>
+    <text x="637" y="322" fill="#EF4444" font-size="9" text-anchor="middle" font-weight="700">$0.7M</text>
+    <text x="637" y="408" fill="#94A3B8" font-size="7" text-anchor="middle">Shrinkage</text>
+    <text x="637" y="419" fill="#64748B" font-size="6" text-anchor="middle">&amp; Loss</text>
+    <line x1="593" y1="385" x2="682" y2="308" stroke="#22C55E" stroke-width="1.5" opacity="0" filter="url(#glow)" stroke-dasharray="300" stroke-dashoffset="300">
+      <animate attributeName="stroke-dashoffset" from="300" to="0" dur="1s" fill="freeze" begin="3.7s"/>
+      <animate attributeName="opacity" from="0" to="0.9" dur="0.3s" fill="freeze" begin="3.7s"/>
     </line>
-    <text x="635" y="355" fill="#22C55E" font-size="9" text-anchor="middle" font-weight="700" opacity="0">
-      <animate attributeName="opacity" from="0" to="1" dur="0.5s" fill="freeze" begin="4.2s"/>-70%
-    </text>
+    <g opacity="0"><animate attributeName="opacity" from="0" to="1" dur="0.4s" fill="freeze" begin="4.4s"/>
+      <rect x="610" y="345" width="54" height="20" rx="10" fill="#052E16" stroke="#22C55E" stroke-width="0.5"/>
+      <text x="637" y="359" fill="#22C55E" font-size="9" text-anchor="middle" font-weight="700">-70%</text>
+    </g>
   </g>
 
-  <!-- Bar 6: Manual Reporting - $0.5M -->
+  <!-- BAR 6: Manual Reporting $0.5M -->
   <g class="fade d8">
-    <rect x="710" y="335" width="90" height="65" rx="4" fill="#F59E0B" opacity="0.25"/>
-    <rect x="710" y="335" width="90" height="65" rx="4" fill="none" stroke="#F59E0B" stroke-width="1" opacity="0.6"/>
-    <rect x="710" y="335" width="90" height="65" rx="4" fill="#F59E0B" opacity="0.15">
-      <animate attributeName="opacity" values="0.15;0.25;0.15" dur="3.5s" repeatCount="indefinite"/>
-    </rect>
-    <text x="755" y="330" fill="#F59E0B" font-size="10" text-anchor="middle" font-weight="700" class="mono">$0.5M</text>
-    <text x="755" y="418" fill="#94A3B8" font-size="7" text-anchor="middle">Manual</text>
-    <text x="755" y="428" fill="#94A3B8" font-size="7" text-anchor="middle">Reporting</text>
-    <line x1="708" y1="390" x2="802" y2="340" stroke="#22C55E" stroke-width="2" opacity="0.8" stroke-dasharray="200" stroke-dashoffset="200">
-      <animate attributeName="stroke-dashoffset" from="200" to="0" dur="1.5s" fill="freeze" begin="3.5s"/>
+    <rect x="715" y="328" width="85" height="62" rx="3" fill="url(#amberBar)"/>
+    <rect x="715" y="328" width="85" height="62" rx="3" fill="none" stroke="#F59E0B" stroke-width="0.6" opacity="0.5"/>
+    <rect x="715" y="328" width="85" height="62" rx="3" fill="#F59E0B" opacity="0.05"><animate attributeName="opacity" values="0.05;0.12;0.05" dur="3.5s" repeatCount="indefinite"/></rect>
+    <rect x="725" y="334" width="65" height="18" rx="3" fill="#0F172A" stroke="#F59E0B" stroke-width="0.4" opacity="0.9"/>
+    <text x="757" y="347" fill="#F59E0B" font-size="9" text-anchor="middle" font-weight="700">$0.5M</text>
+    <text x="757" y="408" fill="#94A3B8" font-size="7" text-anchor="middle">Manual</text>
+    <text x="757" y="419" fill="#64748B" font-size="6" text-anchor="middle">Reporting</text>
+    <line x1="713" y1="385" x2="802" y2="333" stroke="#22C55E" stroke-width="1.5" opacity="0" filter="url(#glow)" stroke-dasharray="300" stroke-dashoffset="300">
+      <animate attributeName="stroke-dashoffset" from="300" to="0" dur="1s" fill="freeze" begin="4.0s"/>
+      <animate attributeName="opacity" from="0" to="0.9" dur="0.3s" fill="freeze" begin="4.0s"/>
     </line>
-    <text x="755" y="365" fill="#22C55E" font-size="9" text-anchor="middle" font-weight="700" opacity="0">
-      <animate attributeName="opacity" from="0" to="1" dur="0.5s" fill="freeze" begin="4.5s"/>-95%
-    </text>
+    <g opacity="0"><animate attributeName="opacity" from="0" to="1" dur="0.4s" fill="freeze" begin="4.7s"/>
+      <rect x="730" y="355" width="54" height="20" rx="10" fill="#052E16" stroke="#22C55E" stroke-width="0.5"/>
+      <text x="757" y="369" fill="#22C55E" font-size="9" text-anchor="middle" font-weight="700">-95%</text>
+    </g>
   </g>
 
-  <!-- ===== BOTTOM: Total Savings Summary ===== -->
+  <!-- BOTTOM: Savings Summary -->
   <g opacity="0">
-    <animate attributeName="opacity" from="0" to="1" dur="0.8s" fill="freeze" begin="4.8s"/>
-
-    <rect x="100" y="450" width="700" height="55" rx="8" fill="#161B22" stroke="#22C55E" stroke-width="0.8"/>
-
-    <text x="140" y="474" fill="#64748B" font-size="8">TOTAL ANNUAL WASTE</text>
-    <text x="140" y="492" fill="#EF4444" font-size="14" font-weight="700" class="mono" text-decoration="line-through">$7.4M</text>
-
-    <line x1="320" y1="458" x2="320" y2="498" stroke="#334155" stroke-width="0.5"/>
-
-    <text x="360" y="474" fill="#64748B" font-size="8">WITH INVENIO</text>
-    <text x="360" y="492" fill="#22C55E" font-size="14" font-weight="700" class="mono">$1.8M</text>
-
-    <line x1="520" y1="458" x2="520" y2="498" stroke="#334155" stroke-width="0.5"/>
-
-    <text x="560" y="474" fill="#64748B" font-size="8">ANNUAL SAVINGS</text>
-    <text x="560" y="492" fill="#22D3EE" font-size="14" font-weight="700" class="mono">$5.6M</text>
-    <text x="560" y="492" fill="#22D3EE" font-size="14" font-weight="700" class="mono">
-      <animate attributeName="opacity" values="0.7;1;0.7" dur="2s" repeatCount="indefinite"/>$5.6M
-    </text>
-
-    <line x1="680" y1="458" x2="680" y2="498" stroke="#334155" stroke-width="0.5"/>
-
-    <text x="720" y="474" fill="#64748B" font-size="8">REDUCTION</text>
-    <rect x="710" y="480" width="70" height="20" rx="4" fill="rgba(34,197,94,0.15)"/>
-    <text x="745" y="494" fill="#22C55E" font-size="12" font-weight="700" text-anchor="middle" class="mono">76%</text>
+    <animate attributeName="opacity" from="0" to="1" dur="0.8s" fill="freeze" begin="5s"/>
+    <rect x="88" y="440" width="742" height="60" rx="8" fill="#0F172A" stroke="#1E293B" stroke-width="0.8"/>
+    <rect x="88" y="440" width="742" height="60" rx="8" fill="url(#savingsGrad)"/>
+    <line x1="280" y1="450" x2="280" y2="492" stroke="#1E293B" stroke-width="0.5"/>
+    <line x1="470" y1="450" x2="470" y2="492" stroke="#1E293B" stroke-width="0.5"/>
+    <line x1="660" y1="450" x2="660" y2="492" stroke="#1E293B" stroke-width="0.5"/>
+    <text x="120" y="462" fill="#475569" font-size="7" letter-spacing="1">TOTAL WASTE</text>
+    <text x="120" y="486" fill="#EF4444" font-size="16" font-weight="700" text-decoration="line-through" opacity="0.7">$7.4M</text>
+    <text x="310" y="462" fill="#475569" font-size="7" letter-spacing="1">WITH INVENIO</text>
+    <text x="310" y="486" fill="#22C55E" font-size="16" font-weight="700" filter="url(#glow)">$1.8M</text>
+    <text x="500" y="462" fill="#475569" font-size="7" letter-spacing="1">ANNUAL SAVINGS</text>
+    <text x="500" y="486" fill="#22D3EE" font-size="16" font-weight="700">$5.6M</text>
+    <text x="500" y="486" fill="#22D3EE" font-size="16" font-weight="700"><animate attributeName="opacity" values="0.6;1;0.6" dur="3s" repeatCount="indefinite"/>$5.6M</text>
+    <text x="700" y="462" fill="#475569" font-size="7" letter-spacing="1">REDUCTION</text>
+    <rect x="690" y="470" width="60" height="24" rx="12" fill="#052E16" stroke="#22C55E" stroke-width="0.6"/>
+    <text x="720" y="487" fill="#22C55E" font-size="13" font-weight="700" text-anchor="middle">76%</text>
   </g>
+
+  <!-- Corner accents -->
+  <line x1="20" y1="12" x2="20" y2="30" stroke="#1E293B" stroke-width="0.5" class="fade d1"/>
+  <line x1="12" y1="20" x2="30" y2="20" stroke="#1E293B" stroke-width="0.5" class="fade d1"/>
+  <line x1="880" y1="500" x2="880" y2="510" stroke="#1E293B" stroke-width="0.5" class="fade d1"/>
+  <line x1="870" y1="508" x2="888" y2="508" stroke="#1E293B" stroke-width="0.5" class="fade d1"/>
 </svg>
