@@ -1,0 +1,3 @@
+http://inveniotech.org/* https://inveniotech.org/:splat 301!
+http://www.inveniotech.org/* https://inveniotech.org/:splat 301!
+https://www.inveniotech.org/* https://inveniotech.org/:splat 301!
