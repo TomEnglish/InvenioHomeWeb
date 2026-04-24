@@ -1,0 +1,20 @@
+[build]
+  publish = "."
+
+[[redirects]]
+  from = "http://inveniotech.org/*"
+  to = "https://inveniotech.org/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://www.inveniotech.org/*"
+  to = "https://inveniotech.org/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.inveniotech.org/*"
+  to = "https://inveniotech.org/:splat"
+  status = 301
+  force = true
